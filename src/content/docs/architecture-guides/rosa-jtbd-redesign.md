@@ -38,5 +38,5 @@ Support ticket patterns shifted after the restructure, demonstrating measurable 
 
 **Live Documentation:**
 - [ROSA User Guide](https://docs.aws.amazon.com/rosa/latest/userguide/) - Complete restructured documentation
-- [ROSA with HCP Getting Started](https://docs.aws.amazon.com/rosa/latest/userguide/getting-started-hcp.html) - Consolidated workflow example
+- [ROSA Getting Started](https://docs.aws.amazon.com/rosa/latest/userguide/getting-started-classic-cli.html) - Consolidated workflow example
 - [AWS Managed Policies](https://docs.aws.amazon.com/rosa/latest/userguide/security-iam-awsmanpol.html) - Unified policy reference

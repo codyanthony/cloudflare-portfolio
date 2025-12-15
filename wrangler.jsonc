@@ -1,22 +1,18 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "virtual-visual",
+	"name": "cloudflare-portfolio",
+  "pages_build_output_dir": "dist",
   "compatibility_date": "2025-12-14",
   "compatibility_flags": [
     "nodejs_compat",
     "global_fetch_strictly_public"
   ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
 	"observability": {
     "enabled": true
   },
   "kv_namespaces": [
     {
       "binding": "VISITOR_COUNT",
-      "id": "YOUR_KV_NAMESPACE_ID_HERE"
+      "id": "0030dcaee1bb40eb94634bb77eb57a20"
     }
   ]
 }

@@ -221,4 +221,4 @@ This workflow accelerates development while maintaining quality through human ov
 
 This portfolio is built in the open. View the source:
 
-**Repository:** [github.com/codyanthony/portfolio-startlight](https://github.com/codyanthony/portfolio-startlight)
+**Repository:** [github.com/codyanthony/cloudflare-portfolio](https://github.com/codyanthony/cloudflare-portfolio)

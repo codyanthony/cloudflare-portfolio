@@ -59,7 +59,7 @@ To get started as simply and quickly as possible, this topic specifies the minim
 
 **Network Planning:** Plan out your IP address space and DNS record setup. You cannot change the IP addressing scheme after deployment.
 
-**VCF Version:** Amazon EVS only supports VCF version 5.2.1.x at this time. You should familiarize yourself with VCF 5.2.1 requirements. For more information, see the VCF 5.2.1 release notes.
+**VCF Version:** Amazon EVS only supports VCF version 5.2.1.x at this time. You should familiarize yourself with VCF 5.2.1 requirements. For more information, see the [VCF 5.2.1 release notes](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-5-2-and-earlier/5-2/vcf-release-notes/vmware-cloud-foundation-521-release-notes.html).
 
 **Boot Volume Encryption:** Amazon EVS hosts do not support encryption for the Amazon EBS boot volume at this time. Ensure this limitation meets your data residency and compliance requirements before creating an environment.
 :::
@@ -81,7 +81,7 @@ Your environment deployment fails if you don't meet these Amazon EVS requirement
 - When enabling Route Server propagation, you must ensure that all route tables being propagated have at least one explicit subnet association. BGP route advertisement fails if propagated route tables do not have an explicit subnet association.
   :::
 
-For more information about setting up VPC Route Server, see the [Route Server get started tutorial](https://docs.aws.amazon.com/vpc/latest/routeserver/what-is-route-server.html).
+For more information about setting up VPC Route Server, see the [Route Server get started tutorial](https://docs.aws.amazon.com/vpc/latest/userguide/route-server-tutorial-create.html).
 
 ---
 
@@ -97,7 +97,7 @@ EC2 security groups do not function on elastic network interfaces that are attac
 
 For more information, see [Create a network ACL for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html) in the Amazon VPC User Guide.
 
-If you plan to configure HCX internet connectivity, ensure that the network ACL rules that you configure allow the necessary inbound and outbound connections for HCX components. For more information about HCX port requirements, see the [VMware HCX User Guide](https://docs.vmware.com/en/VMware-HCX/index.html).
+If you plan to configure HCX internet connectivity, ensure that the network ACL rules that you configure allow the necessary inbound and outbound connections for HCX components. For more information about HCX port requirements, see the [VMware HCX User Guide](https://techdocs.broadcom.com/us/en/vmware-cis/hcx.html).
 
 ---
 
@@ -134,7 +134,7 @@ Ensure that the security groups that you choose provide connectivity to your DNS
 f. **Under Management connectivity**, enter the CIDR blocks to be used for the Amazon EVS VLAN subnets. For **HCX uplink VLAN CIDR block**, if configuring a public HCX VLAN, you must specify a CIDR block with a netmask length of exactly `/28`. Amazon EVS throws a validation error if any other CIDR block size is specified for the public HCX VLAN. For a private HCX VLAN and all other VLANs CIDR blocks, the minimum netmask length that you can use is `/28` and the maximum is `/24`.
 
 :::caution[Important]
-Amazon EVS VLAN subnets can only be created during Amazon EVS environment creation, and cannot be modified after the environment is created. You must ensure that the VLAN subnet CIDR blocks are properly sized before creating the environment. You will not be able to add VLAN subnets after the environment is deployed. For more information, see [Amazon EVS networking considerations](https://docs.aws.amazon.com/evs/latest/userguide/networking-considerations.html).
+Amazon EVS VLAN subnets can only be created during Amazon EVS environment creation, and cannot be modified after the environment is created. You must ensure that the VLAN subnet CIDR blocks are properly sized before creating the environment. You will not be able to add VLAN subnets after the environment is deployed. For more information, see [Amazon EVS networking considerations](https://docs.aws.amazon.com/evs/latest/userguide/architecture.html#evs-subnets).
 :::
 
 g. **Under Expansion VLANs**, enter the CIDR blocks for additional Amazon EVS VLAN subnets that can be used to expand VCF capabilities within Amazon EVS, such as enabling NSX Federation.
