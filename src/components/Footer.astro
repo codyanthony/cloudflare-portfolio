@@ -1,0 +1,28 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import Default from "@astrojs/starlight/components/Footer.astro";
+import VisitorCounter from "./VisitorCounter.jsx";
+---
+
+<Default {...Astro.props}>
+  <div class="site-footer">
+    <VisitorCounter client:load />
+  </div>
+</Default>
+
+<style>
+  .site-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .site-footer {
+      padding: 1rem 0.5rem;
+    }
+  }
+</style>

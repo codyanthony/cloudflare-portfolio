@@ -1,0 +1,88 @@
+---
+title: Cody Anthony
+description: Senior Technical Writer - API Documentation, Architecture Guides & Developer Experience
+template: splash
+hero:
+  tagline: API Documentation · Architecture Guides · Console UX · Documentation Systems
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: View Portfolio
+      link: /api-documentation/evs-createenvironment/
+      icon: document
+      variant: primary
+    - text: About
+      link: /about/
+      icon: information
+      variant: secondary
+    - text: Contact
+      link: /contact/
+      icon: email
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import VisitorCounter from "../../components/VisitorCounter.jsx";
+
+<div style="text-align: center; margin: 2rem 0;">
+  <VisitorCounter client:load />
+</div>
+
+## Senior Technical Writer
+
+8+ years creating documentation for cloud infrastructure, developer tools, and enterprise software. Specializing in API reference documentation, technical architecture guides, console UX microcopy, and documentation systems that scale across organizations.
+
+**Current focus:** Kubernetes/OpenShift, VMware Cloud Foundation (VCF), AWS cloud services, REST APIs, Docs-as-Code, IaC (Terraform, CloudFormation)
+
+## Portfolio by Deliverable Type
+
+<CardGrid>
+  <Card title="API Documentation" icon="seti:json">
+    Comprehensive API reference with tested examples and design participation.
+    [EVS CreateEnvironment API →](/api-documentation/evs-createenvironment/)
+  </Card>
+
+  <Card title="Architecture Guides" icon="puzzle">
+    Technical architecture and deployment guides for complex infrastructure.
+    [EVS Network Architecture →](/architecture-guides/evs-getting-started/)
+    | [ROSA JTBD Redesign →](/architecture-guides/rosa-jtbd-redesign/)
+  </Card>
+
+  <Card title="Console UX & Developer Experience" icon="laptop">
+    Product copy, help text, and API design influence for better developer
+    experience. [EVS Console & API Design →](/console-ux/evs-console-api-design/)
+  </Card>
+
+  <Card title="Documentation Systems & Strategy" icon="setting">
+    Infrastructure modernization and scalable frameworks.
+    [Systems & Strategy →](/systems-strategy/)
+  </Card>
+</CardGrid>
+
+## Tools & Technologies
+
+<CardGrid stagger>
+  <Card title="Formats & Standards" icon="document">
+    AsciiDoc, Markdown, DITA/DocBook XML, JSON/YAML
+  </Card>
+
+  <Card title="Platforms" icon="rocket">
+    Kubernetes/OpenShift, VMware Cloud Foundation (VCF), AWS, REST APIs, IaC (Terraform, CloudFormation)
+  </Card>
+
+  <Card title="Developer Tools" icon="seti:shell">
+    Git, GitHub, Python, CI/CD pipelines (AWS internal tooling, AWS CodePipeline, AWS Amplify), AI assistants (Claude via Cline/Q CLI, ChatGPT, Gemini)
+  </Card>
+
+  <Card title="Methodologies" icon="star">
+    Jobs-to-be-Done (JTBD), Information Architecture, Docs-as-Code, Docs-as-Product, Agile
+  </Card>
+</CardGrid>
+
+## Approach
+
+I embed with Product and Engineering teams early in development, treating documentation as product feedback. This upstream participation allows me to influence API design, console UX, and product decisions before they become documentation challenges.
+
+**Measurable outcomes:** Reducing support tickets through clear error messages · Improving time-to-first-success with tested examples · Enabling self-service through comprehensive reference documentation
+
+[Learn more about my background →](/about/)
