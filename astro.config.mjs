@@ -54,10 +54,6 @@ export default defineConfig({
             { 
               label: 'EVS Network Architecture & Getting Started', 
               link: '/architecture-guides/evs-getting-started/' 
-            },
-            { 
-              label: 'ROSA Jobs-to-be-Done Redesign', 
-              link: '/architecture-guides/rosa-jtbd-redesign/' 
             }
           ]
         },
@@ -72,7 +68,16 @@ export default defineConfig({
         },
         {
           label: 'Documentation Systems & Strategy',
-          link: '/systems-strategy/'
+          items: [
+            { 
+              label: 'AsciiDoc Modernization Program', 
+              link: '/systems-strategy/' 
+            },
+            { 
+              label: 'ROSA Jobs-to-be-Done Content Redesign', 
+              link: '/systems-strategy/rosa-jtbd-redesign/' 
+            }
+          ]
         },
         { label: 'About This Site', link: '/colophon/' },
         { label: 'Contact', link: '/contact/' }

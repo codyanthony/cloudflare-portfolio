@@ -61,7 +61,7 @@ Detailed project documentation and strategy artifacts available on request.
 
 ## Related Documentation Work
 
-**Jobs-to-be-Done content strategy** - Applied JTBD frameworks to [ROSA content redesign](/architecture-guides/rosa-jtbd-redesign/) and [EVS documentation architecture](/architecture-guides/evs-getting-started/).
+**Jobs-to-be-Done content strategy** - Applied JTBD frameworks to [ROSA content redesign](/systems-strategy/rosa-jtbd-redesign/).
 
 **Self-service documentation systems** - Defined contribution runbooks and review gates enabling safe non-writer publishing for SAP on AWS and other partner teams.
 

@@ -42,11 +42,11 @@ I'm always interested in discussing documentation systems, developer experience,
 
 **API Documentation:** [EVS CreateEnvironment API →](/api-documentation/evs-createenvironment/)
 
-**Architecture Guides:** [EVS Getting Started →](/architecture-guides/evs-getting-started/) | [ROSA JTBD →](/architecture-guides/rosa-jtbd-redesign/)
+**Architecture Guides:** [EVS Getting Started →](/architecture-guides/evs-getting-started/)
 
 **Console UX:** [Console & API Design →](/console-ux/console-api-design/)
 
-**Documentation Systems:** [Systems & Strategy →](/systems-strategy/)
+**Documentation Systems:** [AsciiDoc Modernization →](/systems-strategy/) | [ROSA JTBD →](/systems-strategy/rosa-jtbd-redesign/)
 
 **Tech Stack:** [About This Site →](/colophon/)
 
