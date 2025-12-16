@@ -7,25 +7,29 @@ Beyond individual deliverables, I've led documentation infrastructure initiative
 
 ## AsciiDoc Modernization Program
 
-In 2022, I began pioneering documentation format modernization to lower contribution barriers and position documentation infrastructure for emerging AI workflows. Starting with ROSA, I established an early continuously maintained AsciiDoc implementation that served as a foundation for broader organizational adoption, including EKS and additional service teams.
+**2022-Present:** Multi-year initiative pioneering documentation format modernization
 
-### ROSA Foundation
+In **mid-2022**, I began pioneering documentation format modernization to lower contribution barriers and position documentation infrastructure for emerging AI workflows. Starting with ROSA, I established an early continuously maintained AsciiDoc implementation and drove organizational scaling through strategic solutions tailored to each team's needs: enabling EKS to accept external open source contributions, pioneering self-service models ensuring business continuity for teams without dedicated writer support, and leveraging AI-assisted workflows to scale modernization needs while ensuring strict compliance requirements are met for regulated regions documentation.
+
+### ROSA Foundation (2022)
 
 ROSA required close collaboration with external Red Hat technical writers. I researched and proposed AsciiDoc adoption over the standard format, recognizing that a markdown-like source format would lower barriers for contributions from a wider variety of contributors, both human and AI.
 
 I established ROSA's AsciiDoc implementation and created a framework enabling safe contribution from product managers and engineers. This foundation work proved sustainable—ROSA has remained continuously maintained in AsciiDoc format since adoption. The lessons learned from ROSA informed conversion standards that were later adopted by other teams.
 
-### Cross-Service Expansion
+### Cross-Service Expansion (2024)
 
-The ROSA framework demonstrated scalability potential. I influenced EKS adoption of AsciiDoc and provided strategic and implementation support for their transition. Following EKS's adoption, the team reported contributor participation increased to 25%, demonstrating the format's effectiveness in lowering contribution barriers.
+The ROSA framework demonstrated scalability potential. Beginning in **Q2 2024**, I influenced EKS adoption of AsciiDoc and provided strategic and implementation support for their transition through conversion testing, troubleshooting workshops, and authoring best practices documentation. 
 
-I led conversion of six SAP on AWS guides to AsciiDoc, establishing a self-service documentation model enabling SAP service team to maintain content independently, reducing documentation team dependencies while preserving quality through review gates.
+In **June 2024**, I collaborated with AWS engineering to implement XML entity support for AsciiDoc, enabling reuse of standard AWS entities like region.arn across converted documentation. Following EKS's adoption, the team reported contributor participation increased to 25%, demonstrating the format's effectiveness in lowering contribution barriers.
 
-### Regulated Regions Modernization
+I led conversion of six SAP on AWS guides to AsciiDoc in **Q1 2025**, establishing a self-service documentation model enabling SAP service team to maintain content independently, reducing documentation team dependencies while preserving quality through review gates.
 
-I converted AWS Secret Region User Guide and AWS GovCloud User Guide to AsciiDoc, and served as primary contributor to AWS Top Secret Region User Guide conversion. These projects required special handling due to compliance-sensitive content and export control considerations.
+### Regulated Regions Modernization (2025)
 
-To accelerate these conversions while maintaining quality, I developed AI-assisted Python transformation scripts using Claude coding assistant. This automation reduced conversion cycles from days to hours while preserving human-in-the-loop validation for compliance requirements and technical accuracy.
+In **Q3 2025**, I converted AWS Secret Region User Guide, served as primary contributor to AWS Top Secret Region User Guide conversion, and led AWS GovCloud User Guide conversion to AsciiDoc, processing 296+ files and establishing reusable processes for future conversions. 
+
+To accelerate these conversions while maintaining quality, I developed AI-assisted Python transformation scripts using Claude coding assistant, including a custom XML entity to AsciiDoc attribute conversion pipeline that preserves shared content post-conversion, enabling shared content reuse across AsciiDoc packages. This automation reduced conversion cycles from days to hours while preserving human-in-the-loop validation for compliance requirements and technical accuracy.
 
 The tooling and processes I developed from this work have been adopted by platform engineering teams and other writers, who continue building on this foundation to improve conversion processes across the organization.
 
@@ -36,7 +40,7 @@ The tooling and processes I developed from this work have been adopted by platfo
 - Automation tooling reduces conversion time from days to hours
 - Framework voluntarily adopted across multiple service teams
 - Self-service models established reducing documentation team dependencies
-- Successfully converted: ROSA guide, 6 SAP guides, 2 regulated region guides, contributed to 3rd regulated guide
+- Successfully converted: ROSA guide (2022), 6 SAP guides (2025), 3 regulated region guides (2025), contributed to EKS conversion (2024)
 
 **Strategic positioning:**
 - Documentation infrastructure prepared for AI-assisted workflows
