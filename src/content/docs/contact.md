@@ -40,13 +40,15 @@ I'm always interested in discussing documentation systems, developer experience,
 
 ## Portfolio Overview
 
-**Experience:** [View my AWS experience →](/experience/aws/)
+**API Documentation:** [EVS CreateEnvironment API →](/api-documentation/evs-createenvironment/)
 
-**Projects:** [Explore portfolio projects →](/projects/)
+**Architecture Guides:** [EVS Getting Started →](/architecture-guides/evs-getting-started/) | [ROSA JTBD →](/architecture-guides/rosa-jtbd-redesign/)
 
-**Writing Samples:** [See my technical writing →](/writing-samples/)
+**Console UX:** [Console & API Design →](/console-ux/console-api-design/)
 
-**Tech Stack:** [Learn how this site was built →](/colophon/)
+**Documentation Systems:** [Systems & Strategy →](/systems-strategy/)
+
+**Tech Stack:** [About This Site →](/colophon/)
 
 ---
 
