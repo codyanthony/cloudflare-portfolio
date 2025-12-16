@@ -30,7 +30,7 @@ This approach mirrors how technical documentation evolved from pure static sites
 
 **Library:** React v19.2 with `@astrojs/react` integration
 
-The visitor counter widget demonstrates React component integration with proper hydration:
+The visitor counter (implemented in the repository) demonstrates React component integration with proper hydration:
 
 ```jsx
 // Component uses client:load directive for immediate hydration
@@ -67,6 +67,8 @@ export default defineConfig({
 ### Cloudflare Pages Functions
 
 **Backend:** Serverless API in `functions/api/` directory
+
+**Implementation Note:** This portfolio includes a demonstration of Cloudflare Pages Functions for serverless API routes. While the visitor counter component has been removed from the public site (to avoid vanity metrics concerns), the full implementation remains in the repository, demonstrating practical understanding of edge functions, KV storage, and Islands Architecture.
 
 The visitor counter backend runs as a Cloudflare Pages Function:
 
