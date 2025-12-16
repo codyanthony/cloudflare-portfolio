@@ -72,6 +72,12 @@ I'm a Senior Technical Writer with 8+ years of experience creating documentation
 
 I embed with Product and Engineering teams early in the development cycle, treating documentation as product feedback rather than a downstream task. This upstream participation allows me to influence API design, console UX, and product decisions before they become documentation challenges.
 
+I also leverage a background in Instructional Design to optimize information architecture and reduce cognitive load. This pedagogical foundation is critical for:
+
+- Developer Experience (DX): Structuring "Zero-to-Hello-World" paths that respect how developers actually learn.
+
+- AI & LLM Training: Creating highly structured, unambiguous datasets and examples that serve as high-quality ground truth for AI models.
+
 My work focuses on measurable outcomes: reducing support tickets through clear error messages, improving time-to-first-success with tested examples, and enabling self-service through comprehensive reference documentation.
 
 ---
