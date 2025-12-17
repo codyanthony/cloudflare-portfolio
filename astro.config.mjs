@@ -41,7 +41,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:url",
-            content: "https://cloudflare-portfolio-1tl.pages.dev/",
+            content: "https://codyanthony.dev/",
           },
         },
         {
