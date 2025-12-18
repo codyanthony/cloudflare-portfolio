@@ -17,8 +17,21 @@ This architecture and deployment guide for Amazon Elastic VMware Service (EVS) d
 **Tools used:**
 
 - Visual Studio Code
+- AsciiDoctor
 - Draw.io
 - Git
+- Cline
+- Claude
+- AWS console & CLI for end-to-end validation of workflows
+- Python scripts for executing complex resource creation
+- CloudFormation for automating test deployments in developer environments
+- jq for JSON syntax validation
+
+**Formats used:**
+
+- AWS documentation platform (AsciiDoc)
+- JSON
+- bash
 
 **Customer success impact:** Proactively mitigated deployment failures and configuration mismatches by transparently documenting service constraints upfront.
 

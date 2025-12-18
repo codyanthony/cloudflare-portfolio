@@ -8,23 +8,34 @@ This API reference for Amazon Elastic VMware Service demonstrates my approach to
 ## Deliverables & Impact
 
 **Documentation produced:**
-- Complete API reference with all required and optional parameters
+
+- Complete API reference with all required and optional parameters, used as input for SDKs
 - Request syntax with validated JSON structures
 - Constraint documentation (CIDR blocks, license requirements, host minimums)
 - Error response documentation with resolution guidance
 - Parameter relationship documentation (mutual exclusivity, dependencies)
 
-**Tools & formats used:**
-- AWS documentation platform (DocBook XML)
-- JSON syntax validation
-- Tested against development environments
-- Collaborated with Engineering on parameter descriptions used in SDKs
+**Tools used:**
 
-**Developer experience impact:**
+- Oxygen XML Editor
+- Git
+- AWS CLI for validating API parameter inputs, response outputs and error messages
+- Python scripts for executing complex resource creation
+- CloudFormation for automating test deployments in developer environments
+- jq for JSON syntax validation
+
+- **Formats**
+
+- AWS documentation platform (DocBook XML)
+- JSON
+- Python
+- bash
+
+- **Developer experience impact:**
+
 - Prevented trial-and-error through upfront constraint documentation
-- Documented parameter relationships to avoid validation errors
-- Clear validation requirements reducing support tickets
-- Actionable error messages helping developers self-serve
+- Eliminated common integration errors by explicitly defining parameter dependencies and validation rules
+- Enabled developer self-service through actionable, scenario-based error messages
 
 ## Documentation Sample
 
