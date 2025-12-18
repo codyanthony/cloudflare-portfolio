@@ -24,14 +24,14 @@ This API reference for Amazon Elastic VMware Service demonstrates my approach to
 - CloudFormation for automating test deployments in developer environments
 - jq for JSON syntax validation
 
-- **Formats**
+**Formats**
 
 - AWS documentation platform (DocBook XML)
 - JSON
 - Python
 - bash
 
-- **Developer experience impact:**
+**Developer experience impact:**
 
 - Prevented trial-and-error through upfront constraint documentation
 - Eliminated common integration errors by explicitly defining parameter dependencies and validation rules
