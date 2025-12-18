@@ -14,18 +14,13 @@ This architecture and deployment guide for Amazon Elastic VMware Service (EVS) d
 - Step-by-step deployment procedures with constraint documentation
 - Prerequisites and architectural limitations with business impact considerations
 
-**Tools & formats used:**
+**Tools used:**
 
-- AWS documentation platform (AsciiDoc)
-- Network architecture diagrams
-- Cross-references to VMware and AWS documentation
+- Visual Studio Code
+- Draw.io
+- Git
 
-**Customer success impact:**
-
-- Transparent constraint documentation preventing compliance mismatches
-- Clear BGP routing requirements reducing deployment failures
-- Dual-audience approach serving both AWS and VMware administrators
-- Accurate expectations set upfront reducing support escalations
+**Customer success impact:** Proactively mitigated deployment failures and configuration mismatches by transparently documenting service constraints upfront.
 
 ## Documentation Samples
 
