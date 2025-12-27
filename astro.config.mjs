@@ -104,8 +104,12 @@ export default defineConfig({
           label: "Console UX & Developer Experience",
           items: [
             {
-              label: "Console & API Design",
+              label: "Design Influence & Upstream Collaboration",
               link: "/console-ux/console-api-design/",
+            },
+            {
+              label: "ROSA HCP Console Integration",
+              link: "/console-ux/rosa-hcp-console-integration/",
             },
           ],
         },

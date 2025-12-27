@@ -1,81 +1,85 @@
 ---
-title: Console & API Design
-description: Upstream product influence shaping developer and console experience before documentation
+title: Design Influence & Upstream Collaboration
+description: Shaping product experience before documentation through early embedded participation
 ---
 
-Throughout my work on ROSA and Amazon EVS, I embedded with product and engineering teams early in development cycles to influence console UX, API design, and product decisions before documentation plans were finalized. This upstream participation allowed me to act as a customer experience advocate in design discussions, surface friction points before they became documentation challenges, and contribute cross-service insights that informed integration strategies. By treating documentation as product feedback rather than a downstream task, I helped shape experiences that reduced customer friction and operational overhead.
+Throughout my work on ROSA and Amazon EVS, I embedded with product and engineering teams early in development cycles to influence console UX, API design, and product decisions before documentation plans were finalized. This upstream participation allowed me to act as a customer experience advocate in design discussions, surface friction points before they became documentation challenges, and contribute cross-service insights that informed integration strategies.
 
-## Product Design Influence
+By treating documentation as product feedback rather than a downstream task, I helped shape experiences that reduced customer friction and operational overhead. This approach demonstrated that technical writers bring valuable perspective to product design when engaged early in the development lifecycle.
 
-### EVS Service Quotas Integration Strategy
+## Approach & Philosophy
 
-EVS team was evaluating Service Quotas integration approaches for the console experience. I had an opportunity to contribute cross-service perspective from ROSA's implementation to inform their integration strategy decisions.
+I participate in weekly design workshops with product managers, UX designers, and console developers to review Figma mockups and provide feedback on UI workflows. During these sessions, I identify opportunities to improve customer experience through clearer UI text, better information architecture, and more intuitive workflows. I also leverage cross-service operational knowledge to inform design decisions, sharing learnings from one product team with another to accelerate development and prevent repeated friction patterns.
 
-I shared operational learnings from ROSA's Service Quotas implementation, explaining how standard Service Quotas API integration enables automated quota validation and reduces manual support burden. During discussions with EVS Sr PMs, I facilitated conversations on integration approach tradeoffs and proposed standard Service Quotas integration leveraging AWS-managed automation.
+My upstream work spans multiple surfaces: console microcopy and help panels, API parameter naming and validation messaging, error response structures, and product integration strategies. This embedded approach enables me to create more effective documentation because I understand the design rationale behind product decisions and have already surfaced customer experience concerns during development.
 
-The team adopted the standard Service Quotas integration strategy, enabling automated quota checks that eliminate manual request triage for the service team and reduce deployment friction for customers.
+## Featured Projects
+
+These detailed case studies demonstrate the depth of upstream collaboration and its impact on product quality:
+
+### [ROSA with Hosted Control Planes Console Integration](/console-ux/rosa-hcp-console-integration/)
+
+Designed console UI microcopy, help panel content, and comprehensive user documentation for new AWS Marketplace billing model launched in Q2 2023. Collaborated with AWS and Red Hat product teams to standardize terminology and design workflows for both Classic and HCP deployment models.
+
+**Impact:** Console and documentation shipped on schedule with smooth UX approval, enabling business launch of strategically important product offering.
+
+### EVS Day 1 Deployment Experience
+
+Created help panels and console UI text for net-new console experience supporting VMware Cloud Foundation deployment. Collaborated with product and engineering teams to surface network configuration requirements earlier in workflow, preventing mid-deployment validation errors.
+
+**Impact:** [Coming soon - full case study in development]
+
+### ROSA Prerequisites Automation
+
+Designed console prerequisites automation workflow and supporting documentation enabling customers to verify account readiness before cluster deployment. Created UI text, help content, and validation messaging for automated prerequisites checking.
+
+**Impact:** [Coming soon - full case study in development]
+
+### Cross-Service Service Quotas Strategy
+
+Shared operational learnings from ROSA's Service Quotas implementation with EVS team during their integration planning. Facilitated discussions on automation benefits and recommended standard Service Quotas API integration approach.
+
+**Impact:** [Coming soon - full case study in development]
 
 ### EVS API Design Collaboration
 
-EVS team was designing new HCX feature APIs, and I participated in design reviews as documentation representative and customer experience advocate to ensure alignment with AWS API standards.
+Participated in API design reviews as customer experience advocate during HCX feature development. Surfaced parallel VPC work that informed API architecture and contributed to discussions on extensible design patterns aligned with AWS API standards.
 
-During technical discussions, I surfaced parallel VPC development work that could inform HCX API architecture and contributed to conversations on extensible API design patterns. I facilitated discussions on backward compatibility considerations and the benefits of designing APIs that could accommodate future functionality beyond the initial use case.
+**Impact:** [Coming soon - full case study in development]
 
-The team adopted an extensible API architecture aligned with AWS API standards, preventing future backward compatibility constraints while providing broader utility to customers.
+## Additional Design Contributions
 
-### ROSA Contract Flow Cost Presentation
+Beyond major projects, I contributed targeted improvements across multiple product surfaces:
 
-ROSA team was redesigning the contract purchasing experience for improved customer clarity, and I participated in bi-weekly UX design reviews to contribute documentation and customer UX perspective.
+**Console & workflow design:**
 
-I proposed reorganizing cost information as a read-only receipt format with table structure and logical sequencing to improve scannability. I developed clearer label language based on customer mental models.
+- Network prerequisites visibility: Advocated for surfacing VPC Route Server requirements on first screen rather than buried in navigation, preventing mid-deployment validation errors
+- Cost presentation clarity: Proposed receipt-style format with table structure for ROSA contract flow, improving customer understanding of pricing
 
-The UX designer incorporated the receipt-style cost presentation into the purchasing flow, improving cost transparency for customers. 
+**API & parameter design:**
 
-### Additional Design Contributions
+- Parameter naming clarity: Influenced parameter names like `serviceAccessSubnetId` to make purpose self-evident without requiring paragraph explanations
+- Mutual exclusivity documentation: Identified parameters that couldn't be used together (e.g., `dedicatedHostId` and `placementGroupId`) for upfront API documentation
+- Validation constraint documentation: Ensured CIDR block size limits (`/28` to `/24`) documented in parameter descriptions, not just error messages, enabling correct planning upfront
 
-**Network prerequisites visibility** - Advocated for surfacing VPC Route Server requirements on first screen rather than buried in navigation, preventing mid-deployment validation errors.
+**Error messaging & validation:**
 
-**Terminology consistency** - Standardized usage of Amazon EVS VLAN terminology across EVS written assets and dependent service docs, ensuring clarity for both VMware and AWS audiences across console, API, and documentation surfaces.
+- Error message improvements: Replaced vague errors like "Invalid CIDR block" with specific guidance: "CIDR block must be between /28 and /24"
+- Validation timing optimization: Advocated for earlier validation surfacing to prevent mid-workflow errors
 
-**Parameter naming clarity** - Influenced parameter names like `serviceAccessSubnetId` to make purpose self-evident without requiring paragraph explanations.
+**Terminology & consistency:**
 
-**Validation constraint documentation** - Ensured CIDR block size limits (`/28` to `/24`) documented in parameter descriptions, not just error messages, enabling correct planning upfront.
+- Cross-service terminology standardization: Standardized usage of Amazon EVS VLAN terminology across EVS written assets and dependent service docs, ensuring clarity for both VMware and AWS audiences across console, API, and documentation surfaces
+- Product naming alignment: Facilitated cross-company agreement on "ROSA with hosted control planes" terminology between AWS and Red Hat teams
 
-**Error message improvements** - Replaced vague errors like "Invalid CIDR block" with specific guidance: "CIDR block must be between /28 and /24."
+## Collaboration Approach
 
-**Mutual exclusivity documentation** - Identified parameters that couldn't be used together (e.g., `dedicatedHostId` and `placementGroupId`) for upfront API documentation.
+**Methods & tools:**
 
-## Documentation & UX Deliverables
-
-**Console microcopy:**
-- Help text for console form fields explaining prerequisites and validation rules
-- Error messages providing actionable guidance for validation failures
-- Tooltips clarifying complex networking concepts (BGP routing, VPC Route Server, Service Quotas)
-- Field labels aligning terminology across console, API, and documentation
-- UI text for console pages, error states, and status messages
-- Help panels for complex workflows and configuration steps
-
-**API documentation:**
-- Parameter naming reviews for consistency with AWS patterns
-- Validation requirement specifications preventing trial-and-error
-- Error response structures including affected fields and resolution guidance
-- Parameter descriptions used in SDK documentation and CLI help text
-- API architecture recommendations aligned with AWS standards
-
-## Customer Impact
-
-These collaborative efforts demonstrated measurable outcomes across both services:
-
-- **Operational efficiency:** Standard Service Quotas integration eliminated future manual request triage, reducing support burden
-- **API quality:** Extensible architecture aligned with AWS standards prevented technical debt and future refactoring
-- **UX transparency:** Receipt-style cost presentation improved customer understanding of pricing in purchasing flows
-- **Cross-service learning:** ROSA operational insights informed EVS integration decisions, accelerating development
-
-By embedding early in product development, I influenced upstream decisions that prevented downstream documentation challenges and improved customer experience.
-
-**Tools & methodologies used:**
-- Weekly UX design sessions with product, design, and development teams
+- Weekly UX design workshops with product, design, and development teams
 - Figma mockup review and design feedback
-- Cross-service operational insights (ROSA → EVS knowledge transfer)
+- Cross-service operational insights and knowledge transfer
 - Customer experience advocacy in API and console design discussions
 - Technical review coordination with product and engineering stakeholders
+
+**Key principle:** Embed early, contribute often, and treat documentation expertise as design input rather than post-launch cleanup.
