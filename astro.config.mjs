@@ -108,8 +108,16 @@ export default defineConfig({
               link: "/console-ux/console-api-design/",
             },
             {
-              label: "ROSA Prerequisites Automation",
+              label: "HCX API Design Collaboration",
+              link: "/console-ux/evs-hcx-api-design/",
+            },
+            {
+              label: "ROSA Day 1 Experience",
               link: "/console-ux/rosa-prerequisites-automation/",
+            },
+            {
+              label: "Cross-Service Service Quotas Strategy",
+              link: "/console-ux/cross-service-service-quotas/",
             },
             {
               label: "ROSA HCP Console Integration",
@@ -125,8 +133,12 @@ export default defineConfig({
           label: "Documentation Systems & Strategy",
           items: [
             {
+              label: "Documentation Systems & Strategy",
+              link: "/systems-strategy/systems-strategy/",
+            },
+            {
               label: "AsciiDoc Modernization Program",
-              link: "/systems-strategy/",
+              link: "/systems-strategy/adoc-modernization/",
             },
             {
               label: "ROSA Jobs-to-be-Done Content Redesign",

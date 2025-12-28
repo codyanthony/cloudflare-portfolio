@@ -1,13 +1,14 @@
 ---
-title: ROSA Prerequisites Automation
+title: ROSA Day 1 Experience
 description: Designing automated prerequisite validation and getting started documentation to reduce ROSA enablement friction
 ---
 
 import { Card, CardGrid, Aside, LinkCard } from "@astrojs/starlight/components";
 
-This project demonstrates coordinated console automation and getting started documentation for Red Hat OpenShift Service on AWS (ROSA), a managed service for deploying containerized applications with Red Hat OpenShift on AWS. I created automated prerequisite validation wizard UI text, help panels, and comprehensive AWS getting started documentation as components of a cohesive Day 1 enablement experience, shipping with console launch in Q4 2022.
+This project demonstrates the development of an automated prerequisite validation experience for the console, as well as getting started documentation for Red Hat OpenShift Service on AWS (ROSA), a managed service for deploying containerized applications with Red Hat OpenShift on AWS.
+I created UI text and help panels for the new console experience, and getting started documentation for the ROSA User Guide as components of a cohesive Day 1 experience, shipping with console's launch in Q4 2022.
 
-The work addressed two customer friction points: lack of AWS-native getting started documentation and manual prerequisite verification requiring navigation across multiple AWS consoles. I participated in weekly design workshops with PM, UX Designer, Console Developer, and Front-End Engineer through Q4 2022, while creating getting started documentation in parallel through Q3 2022. I also collaborated with Red Hat writers to ensure terminology consistency across both AWS and Red Hat documentation platforms.
+The work addressed two customer friction points: manual prerequisite verification requiring navigation across multiple AWS consoles and lack of AWS-native getting started documentation. I participated in weekly design workshops with the ROSA PM, UX Designer, Console Developer, and Front-End Engineer through Q4 2022, while creating getting started documentation in parallel through Q3 2022. I also collaborated with Red Hat writers to ensure terminology consistency across both AWS and Red Hat documentation platforms.
 
 <Aside type="tip" title="At a Glance">
 
@@ -24,9 +25,9 @@ _ROSA Get Started page with automated prerequisite validation checking account r
 
 ## The Challenge
 
-### Closing the Gap Between Customer Expectations and Reality
+### Reducing Friction in ROSA Enablement
 
-The primary challenge was manual prerequisite verification. Customers had to discover prerequisite requirements through documentation, then manually check their AWS accounts across multiple consoles for Service Quotas, IAM roles, and ELB service-linked roles. This process provided no proactive visibility into account readiness, leading to deployment failures discovered late in the process when customers had already invested significant time.
+Enabling ROSA required customers to verify their AWS accounts met specific prerequisites for Service Quotas, IAM roles, and ELB service-linked roles before creating clusters. This verification process was entirely manual. Customers had to discover prerequisite requirements through documentation, then check their AWS accounts across multiple consoles. The process provided no proactive visibility into account readiness, leading to deployment failures discovered late when customers had already invested significant time.
 
 Compounding this automation gap, AWS lacked native getting started documentation for ROSA. All Day 0 and Day 1 documentation lived exclusively on Red Hat's documentation site. ROSA customers, accustomed to finding prerequisite and deployment information in AWS service user guides on docs.aws.amazon.com, encountered navigation friction when forced to look elsewhere. This positioning confusion made ROSA appear less integrated as an AWS-native service than customers expected.
 
@@ -37,55 +38,35 @@ Compounding this automation gap, AWS lacked native getting started documentation
 - ELB: Service-linked roles for load balancer management
 - AWS Marketplace: Contract enablement requirements
 
-**Customer impact:**
-Time-consuming prerequisite hunting across Red Hat and AWS resources created friction. Customers switching between AWS console and Red Hat documentation experienced confusion about where to find authoritative information. ROSA's positioning as an AWS-native service became less clear when customers couldn't find deployment documentation on AWS platforms. Higher support overhead resulted from preventable deployment failures.
-
 ![Service Quotas Help Panel](/rosa-prereq-service-quotas-hp.png)
 _Service Quotas help panel explaining why EC2 and EBS quota limits matter for ROSA cluster creation_
 
-## My Approach
+## Designing the Prerequisite Validation Experience
 
-### Cross-Functional Workshops and Parallel Content Development
+### Console Automation and Help Panel System
 
-This work spanned both console automation and documentation creation. While the PM and UX Designer developed console functionality, I participated in weekly design workshops to shape UI text and help content, then created comprehensive AWS getting started documentation in parallel. Both surfaces reinforced the same prerequisite requirements and deployment workflows.
+The prerequisite validation page needed to check three AWS account requirements automatically: ROSA enablement status, Service Quotas sufficiency, and ELB service-linked role presence. I created UI text and help panels that explained each validation check while showing account readiness status in real-time.
 
-**Weekly design workshops (Q4 2022):**
+**Console improvements:**
 
-I participated in UX design meetings with PM, UX Designer, Console Developer, and Front-End Engineer, reviewing Figma mockups at early design stages and providing feedback on UI workflows and information architecture. These sessions enabled iterative refinement where I could identify gaps before designs were finalized rather than addressing issues post-implementation.
+- Page introductory text framing the purpose and setting expectations for what customers would accomplish
+- Real-time validation status for each prerequisite with success and error states
+- Actionable error messaging identifying specific quotas requiring adjustment when validation failed
+- Info callouts explaining why each prerequisite mattered and addressing common misconceptions about billing and enablement
+- Validation checkpoint confirming prerequisites before allowing customers to proceed to cluster creation
 
-**Design feedback contributions:**
+**Help panel system (6 panels):**
 
-I identified information gaps in the PM and designer's proposed UI text, particularly around Marketplace dependencies, Service Quotas requirements, and ELB functionality. Many customers coming from on-premises OpenShift environments were unfamiliar with these AWS service integrations. My feedback influenced console design language and element choices through multiple design review cycles.
+I created contextualized help panels addressing knowledge gaps for customers coming from on-premises OpenShift who might be unfamiliar with AWS service integrations:
 
-I also suggested UI text improvements for accessibility and inclusivity. The original text contained jargon and assumed AWS expertise. I rewrote content to explain concepts like Marketplace integration, Service Quotas purpose, and ELB role necessity in simpler terms while maintaining technical accuracy.
+- **ROSA Enablement:** Explained Marketplace subscription model and addressed billing concerns
+- **Verify Prerequisites:** Described automated validation process and what the prerequisite validation page checks
+- **Service Quotas:** Defined Service Quotas service for customers unfamiliar with AWS quota management, explained minimum requirements across EC2, VPC, EBS, and ELB
+- **ELB Service-Linked Role:** Clarified why load balancer role requirement existed and how it enables load balancer management
+- **AWS Account Requirements:** Explained IAM roles and trust policy setup
+- **AWS and Red Hat Account Connection:** Described Marketplace integration and cross-company account linking
 
-**Iterative refinement process:**
-
-The PM and UX Designer drafted initial UI text based on feature specifications. I rewrote this content to simplify language and improve scannability, then shared revisions through collaborative review cycles with PM, UX, and Console Dev. Our editor provided final polish before implementation. This collaborative process ensured UI text addressed customer needs while aligning with technical constraints.
-
-**Help panel strategy:**
-
-I created help content from scratch for this net-new console experience. Each help panel was contextualized at the appropriate depth for its specific prerequisite type. Rather than explaining everything in the console, help panels linked to detailed documentation for customers needing deeper technical guidance, creating a natural path from console to comprehensive AWS documentation.
-
-## Designing the Console Experience
-
-### UI Text and Automated Validation
-
-The prerequisite wizard required UI text across multiple interaction points: step instructions, status messaging for each validation check, error messaging with actionable next steps, explanatory text for why each prerequisite matters, and simplified technical language for complex AWS service dependencies.
-
-**Key UI text improvements:**
-
-The original PM/designer text contained jargon and assumed AWS expertise that OpenShift administrators might not have. I rewrote content to improve accessibility by explaining Marketplace integration (why ROSA uses AWS Marketplace for billing), Service Quotas purpose (preventing deployment failures from insufficient capacity), and ELB role necessity (load balancer management for cluster traffic).
-
-I simplified headings and descriptions for scannability, ensuring customers could quickly understand validation results without reading dense paragraphs. All content used standard AWS service naming conventions to maintain consistency with other AWS documentation customers already knew.
-
-### Help Panel Content
-
-I created a help panel system from scratch for the prerequisite wizard, covering ROSA Enablement overview (what the wizard checks and why), Verify Prerequisites (how automated checking works), AWS Account Requirements (IAM roles and trust policy setup), Service Quotas (EC2 instance limits, EBS volumes, Elastic IPs), ELB Service-Linked Roles (why load balancer roles are required), and AWS and Red Hat Account Connection (Marketplace integration explanation).
-
-**Help panel design principles:**
-
-Help panels appeared contextually at the point of customer need rather than requiring navigation away from the task. Content was concise, addressing specific information gaps without overwhelming customers with unnecessary details. Each panel included actionable next steps, linking to detailed documentation for resolution guidance when validation checks failed.
+Each help panel linked to detailed documentation for customers needing deeper configuration guidance, creating a natural path from console validation to comprehensive AWS documentation.
 
 ![Help Panel Screenshot](/rosa-prereq-verify-hp.png)
 _Help panel providing contextual guidance on ROSA enablement prerequisites and automated validation process_
@@ -98,7 +79,7 @@ While developing console UI text, I created comprehensive getting started docume
 
 **Docs-as-product approach:**
 
-Documentation was designed as part of the complete enablement surface, reinforcing terminology and prerequisites introduced in the console wizard. Console help panels linked to detailed documentation; documentation reflected console validation checks. This connection ensured customers experienced consistent guidance whether they started in the console or documentation.
+Documentation was designed as part of the complete enablement surface, reinforcing terminology and prerequisites introduced in the console UI. Console help panels linked to detailed documentation; documentation reflected console validation checks. This connection ensured customers experienced consistent guidance whether they started in the console or documentation.
 
 **Cross-company collaboration:**
 
@@ -114,7 +95,7 @@ I worked with Red Hat documentation writers to ensure a unified Day 1 narrative 
 
 <LinkCard
   title="Set Up Prerequisites"
-  description="Detailed prerequisite requirements and configuration instructions customers validated in console wizard"
+  description="Detailed prerequisite requirements and configuration instructions customers validated in console"
   href="https://docs.aws.amazon.com/rosa/latest/userguide/set-up.html"
 />
 
@@ -134,25 +115,26 @@ I worked with Red Hat documentation writers to ensure a unified Day 1 narrative 
 
 I created a getting started landing page directing customers to the appropriate workflow for their use case (CLI-based vs PrivateLink-based deployment). A separate set-up page surfaced all prerequisites in one location, making it easy for customers to verify readiness before beginning deployment. Workflow-specific deployment procedures provided step-by-step guidance tailored to each approach.
 
-Prerequisites documented in the set-up page aligned exactly with console wizard validation checks, creating a consistent story. Customers could validate prerequisites in the console, then reference detailed configuration steps in the documentation without encountering conflicting information about what was required.
+Prerequisites documented in the set-up page aligned exactly with in-console validation checks, creating a consistent story. Customers could validate prerequisites in the console, then reference detailed configuration steps in the documentation without encountering conflicting information about what was required.
 
 **Console and documentation connection:**
 
-Console help panels linked directly to relevant sections in the set-up documentation, providing a clear path from automated validation to detailed configuration guidance. Both surfaces used consistent AWS service terminology, so customers didn't need to mentally translate between different naming conventions. Customers could self-service through the console wizard, then reference documentation for detailed procedures when needed.
+Console help panels linked directly to relevant sections in the set-up documentation, providing a clear path from automated validation to detailed configuration guidance. Both surfaces used consistent AWS service terminology, so customers didn't need to mentally translate between different naming conventions. Customers could self-service through the console, then reference documentation for detailed procedures when needed.
 
 ## Impact and Outcomes
 
 ### Cohesive AWS-Native Enablement Experience
 
-The coordinated console and documentation experience shipped in Q4 2022, creating ROSA's first complete AWS-native enablement path. The prerequisite automation wizard passed Fit n' Finish UX review on first submission, validating the approach of developing UI text through embedded weekly workshops rather than post-design retrofitting.
+The coordinated console and documentation experience shipped in Q4 2022, creating ROSA's first complete AWS-native enablement path.
+The documentation filled a customer-identified gap, providing prerequisite and deployment guidance customers expected to find in the AWS ROSA User Guide.
+Customers could now discover all necessary prerequisite information on docs.aws.amazon.com, eliminating the friction of hunting across partner documentation sites for foundational enablement information.
 
-The documentation filled a customer-identified gap, providing prerequisite and deployment guidance customers expected to find in the AWS ROSA User Guide. Customers could now discover all necessary information on docs.aws.amazon.com, eliminating the friction of hunting across partner documentation sites for foundational enablement information.
-
-This foundation became the base for subsequent ROSA features, including the 2023 HCP billing integration that built upon the same prerequisite validation and documentation framework. The patterns established for automated prerequisite checking and coordinated console-documentation development became the template for future ROSA console work.
+This foundation became the base for subsequent ROSA features, including the 2023 HCP billing integration that built upon the same prerequisite validation and documentation framework.
+The patterns established for automated prerequisite checking and coordinated console-documentation development became the template for future ROSA console work.
 
 <CardGrid>
   <Card title="Automated Enablement">
-    Prerequisite wizard eliminated manual verification across multiple AWS consoles
+    Prerequisite page eliminated manual verification across multiple AWS consoles
   </Card>
 
 <Card title="Improved First-Deployment Success">

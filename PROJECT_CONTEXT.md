@@ -1,7 +1,7 @@
 # Portfolio Project Context & Progress
 
-**Last Updated:** December 27, 2025
-**Status:** 2 of 5 case studies complete
+**Last Updated:** December 28, 2025
+**Status:** 5 of 6 case studies complete
 
 ---
 
@@ -88,11 +88,104 @@ Building a **Senior Technical Writer portfolio site** using Astro Starlight for 
 
 **Status:** COMPLETE and approved
 
+### ✅ Case Study 3: ROSA Day 1 Experience (Prerequisites Automation)
+
+**File:** `src/content/docs/console-ux/rosa-prerequisites-automation.mdx`
+
+**Summary:** Automated prerequisite validation and getting started documentation for Red Hat OpenShift Service on AWS (ROSA). Demonstrates parallel console and documentation development to reduce enablement friction.
+
+**Key Elements:**
+
+- Problem: Manual prerequisite verification across multiple consoles + documentation gap on docs.aws.amazon.com
+- Solution: Automated prerequisite page in console + comprehensive AWS-native getting started docs
+- Work: UI text, 6 help panels for console, getting started documentation for AWS ROSA User Guide
+- Impact: Eliminated manual verification, created AWS-native enablement path, improved time-to-first-cluster
+
+**Screenshots:**
+
+- rosa-prereq-get-started.png (prerequisite page in console with automated validation)
+- rosa-prereq-service-quotas-hp.png (Service Quotas help panel)
+- rosa-prereq-verify-hp.png (verification help panel)
+
+**Key Patterns Applied:**
+
+- Summary approach (not verbatim UI text) - let screenshots show actual text
+- Consolidated sections focused on concrete improvements
+- Collaboration context embedded in Impact section (not separate process section)
+- Mirrored EVS structure for consistency
+
+**Status:** COMPLETE and approved
+
+### ✅ Case Study 4: Cross-Service Service Quotas Integration Strategy
+
+**File:** `src/content/docs/console-ux/cross-service-service-quotas.mdx`
+
+**Summary:** Leveraging ROSA operational learnings to influence EVS Service Quotas implementation strategy, preventing customer friction and support overhead patterns.
+
+**Key Elements:**
+
+- Problem: EVS planning custom SQ logic similar to ROSA (risking operational overhead)
+- Solution: Cross-service knowledge sharing influenced strategic shift toward standard API integration + thoughtful quota defaults
+- Timeline: Q1 2025 (Public Preview Planning)
+- Impact: Multi-faceted approach (API integration + quota defaults) improved customer self-service and reduced anticipated support overhead
+
+**Screenshots:**
+
+- rosa-prereq-get-started.png (existing - shows ROSA custom logic pattern)
+- evs-service-quotas-validation.png (new - shows EVS validation approach)
+
+**Key Patterns Applied:**
+
+- Diplomatic ROSA framing (reasonable launch choice, service maturation)
+- All impacts tied to customer experience (not internal metrics)
+- No redundancy between Challenge and Strategic Influence sections
+- Shows HOW influence happened (facilitation, reframing, data-driven advocacy)
+
+**Status:** COMPLETE and approved
+
+### ✅ Case Study 5: HCX API Design Collaboration
+
+**File:** `src/content/docs/console-ux/evs-hcx-api-design.mdx`
+
+**Summary:** Upstream product influence during EVS HCX feature API design. Advocated for extensible architecture aligned with AWS API standards.
+
+**Key Elements:**
+
+- Problem: EVS planning single-purpose API design for HCX elastic IP association
+- Solution: Surfaced parallel VPC work, raised backward compatibility concerns, advocated for AWS API standards alignment
+- Timeline: Q1-Q3 2025 (Foundation → Influence → Launch)
+- Impact: Team adopted extensible API architecture; feature shipped September 2025
+
+**Visuals:**
+
+- Text-only case study (no screenshots/code examples)
+- Generic architectural descriptions (no specific internal API names)
+- Demonstrates strategic influence over technical implementation
+
+**Key Patterns Applied:**
+
+- Q1 collaboration foundation embedded in Strategic Influence section
+- Shows HOW influence happened (standards-based advocacy, trade-off discussions)
+- Q3 launch validation demonstrates follow-through
+- Consistent with other case study structures
+
+**Status:** COMPLETE and approved
+
+---
+
+### ✅ Landing Page: Design Influence & Upstream Collaboration
+
+**File:** `src/content/docs/console-ux/console-api-design.mdx`
+
+**Summary:** Overview page demonstrating upstream embedded collaboration approach across ROSA and EVS projects. Links to all 5 completed case studies with impact summaries.
+
+**Status:** COMPLETE - All case study links updated
+
 ---
 
 ## Remaining Work
 
-### 3 More Case Studies to Create
+### Additional Case Studies (Optional)
 
 1. **ROSA JTBD Redesign** (Systems & Strategy)
    - File: `src/content/docs/systems-strategy/rosa-jtbd-redesign.md` (exists, needs review/revision)
@@ -103,11 +196,6 @@ Building a **Senior Technical Writer portfolio site** using Astro Starlight for 
    - File: `src/content/docs/api-documentation/evs-createenvironment.md` (exists, needs review/revision)
    - Topic: CreateEnvironment API reference
    - Focus: Complex parameter documentation for VMware VCF deployment
-
-3. **Console & API Design Principles** (Architecture/Process category)
-   - File: `src/content/docs/console-ux/console-api-design.md` (exists, needs review/revision)
-   - Topic: Embedded collaboration approach and design feedback
-   - Focus: How early API/console participation prevents content debt
 
 ### Additional Polish Needed
 
@@ -194,27 +282,31 @@ Building a **Senior Technical Writer portfolio site** using Astro Starlight for 
 
 ```
 src/content/docs/
-├── index.mdx                          # Landing page
-├── about.md                           # About/summary
-├── contact.md                         # Contact info
-├── colophon.md                        # Site details
-├── systems-strategy.md                # Category landing
+├── index.mdx                                    # Landing page
+├── about.md                                     # About/summary
+├── contact.md                                   # Contact info
+├── colophon.md                                  # Site details
+├── systems-strategy.md                          # Category landing
 ├── console-ux/
-│   ├── console-api-design.md          # Case study 5 (needs work)
-│   ├── evs-day1-deployment.mdx        # ✅ Case study 2 (COMPLETE)
-│   └── rosa-hcp-console-integration.mdx # ✅ Case study 1 (COMPLETE)
+│   ├── console-api-design.mdx                   # Case study overview (landing page)
+│   ├── cross-service-service-quotas.mdx         # ✅ Case study 4 (COMPLETE)
+│   ├── evs-day1-deployment.mdx                  # ✅ Case study 2 (COMPLETE)
+│   ├── evs-hcx-api-design.mdx                   # ✅ Case study 5 (COMPLETE)
+│   ├── rosa-hcp-console-integration.mdx         # ✅ Case study 1 (COMPLETE)
+│   └── rosa-prerequisites-automation.mdx        # ✅ Case study 3 (COMPLETE)
 ├── systems-strategy/
-│   └── rosa-jtbd-redesign.md          # Case study 3 (needs work)
+│   └── rosa-jtbd-redesign.md                    # Case study (needs work)
 ├── api-documentation/
-│   └── evs-createenvironment.md       # Case study 4 (needs work)
+│   └── evs-createenvironment.md                 # Case study (needs work)
 └── architecture-guides/
-    └── evs-getting-started.md         # Writing sample (reference only)
+    └── evs-getting-started.md                   # Writing sample (reference only)
 
 public/
-├── evs-*.png                          # EVS screenshots
-├── rosa-*.png                         # ROSA screenshots
-├── Cody_Anthony_Resume.pdf            # Resume
-└── Cody_Anthony_Sample_*.pdf          # Writing samples
+├── evs-*.png                                    # EVS screenshots
+├── rosa-*.png                                   # ROSA screenshots
+├── evs-service-quotas-validation.png            # EVS SQ validation
+├── Cody_Anthony_Resume.pdf                      # Resume
+└── Cody_Anthony_Sample_*.pdf                    # Writing samples
 ```
 
 ---

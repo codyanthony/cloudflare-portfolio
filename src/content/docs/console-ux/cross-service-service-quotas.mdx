@@ -1,0 +1,105 @@
+---
+title: Cross-Service Service Quotas Integration Strategy
+description: Leveraging ROSA operational learnings to influence EVS Service Quotas implementation, preventing customer friction and support overhead
+---
+
+import { Card, CardGrid, Aside } from "@astrojs/starlight/components";
+
+This project demonstrates cross-service knowledge sharing that influenced EVS's Service Quotas implementation approach. I recognized operational patterns from ROSA's prerequisite automation experience and contributed those learnings during EVS public preview planning, helping stakeholders adopt an automated solution that scales with customer demand while reducing friction and support overhead.
+
+<Aside type="tip" title="At a Glance">
+
+- **Challenge:** EVS planning custom Service Quotas validation similar to ROSA, risking operational overhead and customer friction
+- **My Role:** Strategic Advisor - Cross-Service Knowledge Sharing
+- **Timeline:** Q1 2025 (Public Preview Planning)
+- **Team:** EVS Product, Engineering, and Support teams
+- **Impact:** Influenced strategic shift toward standard Service Quotas API integration
+
+</Aside>
+
+![ROSA Service Quotas Validation](/rosa-prereq-get-started.png)
+_ROSA's Service Quotas validation using custom console logic - effective for validation but required manual support cases for quota increases_
+
+## The Challenge
+
+### Recognizing a Pattern Before It Repeated
+
+ROSA's implementation prioritized rapid launch delivery with custom validation logic that effectively checked customer account quotas before cluster creation. This approach met initial launch requirements and enabled ROSA to ship on schedule.
+
+As ROSA matured and customer adoption grew, patterns emerged in how customers interacted with quota limitations. Customers needing quota increases had to create support cases, which meant waiting for manual review before proceeding with cluster deployment. As request volume increased with ROSA's expanding customer base, wait times for manual triage grew, extending deployment timelines for customers ready to create clusters.
+
+During EVS public preview planning, I saw EVS heading toward the same custom validation approach. This created an opportunity to incorporate ROSA's operational insights from the start, potentially avoiding the customer wait times and scaling challenges ROSA had experienced.
+
+## Strategic Influence
+
+### Leveraging Cross-Service Operational Learnings
+
+During public preview planning discussions, I shared ROSA's operational experience with EVS product leadership. Rather than advocating for a specific approach, I focused on helping stakeholders understand the full lifecycle implications of each path.
+
+**Building Strategic Context:**
+
+I framed the decision as more than a launch timeline trade-off. While custom logic could ship faster, the standard API integration would enable customer self-service from day one. I walked through specific examples from ROSA: request volume patterns, average wait times for manual reviews, and how these affected customers ready to deploy.
+
+This data-driven conversation shifted the discussion from "can we launch on time" to "what experience do we want customers to have at scale." EVS product leadership recognized that designing for self-service upfront would be simpler than retrofitting it later.
+
+I also recommended EVS reconsider quota defaults alongside the API integration approach. Setting the environment count quota to zero required all customers to request manual increases before creating their first environment - an artificial barrier regardless of integration method. I suggested customer-friendly defaults that would accommodate typical use cases, eliminating unnecessary support requests for routine scenarios.
+
+**Validation Through Public Preview:**
+
+Public preview deployment data later confirmed the importance of reducing friction. Early testing revealed deployment challenges, reinforcing the value of minimizing any unnecessary barriers in the enablement experience.
+
+## Impact
+
+### Improved Strategic Direction
+
+EVS product team adopted a multi-faceted approach informed by both cross-service operational insights and public preview validation. Beyond standard API integration, the team adjusted quota defaults based on typical customer needs. The environment count quota shifted from zero to one, and host count quotas were set at levels that accommodated majority use cases without requiring support intervention.
+
+This strategic decision positioned EVS for better customer experience and operational efficiency.
+
+**Customer benefits:**
+
+- Automated Service Quotas validation in console
+- Increased quota defaults reduced need for manual support intervention, improving environment creation times
+- Proactive visibility into account readiness before deployment attempts
+
+**Operational benefits:**
+
+- Reduced support overhead for EVS team
+- Eliminated manual triage of quota increase requests
+- Scalable solution aligned with AWS service integration best practices
+
+![EVS Service Quotas Validation](/evs-service-quotas-validation.png)
+_EVS Service Quotas validation in Create Environment wizard - validating On-Demand Standard instances quota requirements_
+
+<CardGrid>
+  <Card title="Self-Service Enablement">
+    Standard API integration enabled automated customer self-service for quota
+    increase requests
+  </Card>
+
+<Card title="Reduced Support Overhead">
+  Eliminated anticipated manual triage of Service Quotas increase requests
+</Card>
+
+<Card title="Scalable Solution">
+  AWS-standard integration approach scaled efficiently with customer adoption
+</Card>
+
+  <Card title="Proactive Validation">
+    Automated quota checking provided early visibility into account readiness
+  </Card>
+</CardGrid>
+
+## Key Takeaways
+
+### Cross-Service Operational Learnings Create Strategic Leverage
+
+Operational experience with one service creates valuable insights for improving others. Recognizing implementation patterns and their downstream impacts enables proactive influence before problems emerge at scale.
+
+### Early Strategic Influence Prevents Costly Course Corrections
+
+Engaging product teams during planning phase - before implementation begins - creates opportunity to shape direction with minimal disruption. Strategic decisions made early compound their value over time.
+
+### Concrete Operational Data Drives Strategic Decisions
+
+Abstract concerns about future scalability carry less weight than demonstrated operational impact. Sharing specific data about support case volume and manual triage overhead provided compelling evidence for alternative approaches.
