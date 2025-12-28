@@ -8,7 +8,7 @@ This guide ensures portfolio content reads as natural human prose, not AI-genera
 
 1. Write conversationally, as if explaining to a colleague
 2. Show through concrete examples, don't just tell
-3. Use formatting sparingly and strategically
+3. Use formatting sparingly and strategicalRely
 4. Vary sentence structure and length
 5. Be specific over impressive
 
@@ -19,6 +19,7 @@ This guide ensures portfolio content reads as natural human prose, not AI-genera
 - ❌ **Em dashes (—) for sentence breaks**
 - ❌ **Informal hyphens (-) for dramatic pauses**
 - ❌ **Negative dramatic openings** ("This wasn't just...")
+- ❌ **Quotation marks for emphasis** (creates ambiguity, appears unprofessional)
 - ❌ **Excessive lists** (use only when significantly improving readability)
 - ❌ **Decorative icons** (use only when adding value)
 - ❌ **Bold for emphasis** (use only for scannability)
@@ -86,16 +87,29 @@ that reduced deployment time.
 - ❌ "It's worth noting that the documentation addressed customer pain points."
 - ✅ "The documentation addressed pain points customers raised in support tickets."
 
-### 4. Adjective Stacking
+### 4. Adjective Stacking and Dramatic Language
 
-**Avoid:** comprehensive, robust, seamless, innovative, strategic, critical (all overused by AI)
+**Avoid adjectives overused by AI:** comprehensive, robust, seamless, innovative, strategic
+
+**Avoid dramatic/hyperbolic language:** crisis, critical, crucial, vital, essential, pivotal, game-changing, revolutionary
 
 **Use:** Specific, concrete descriptors or let actions speak
 
-**Example:**
+**Why avoid dramatic language:** These words inflate importance and sound marketing-like rather than professional. State the situation directly without hyperbole.
+
+**Examples:**
 
 - ❌ "I created a comprehensive, robust documentation system that provided seamless integration."
 - ✅ "I created documentation that integrated with the console workflow, providing guidance at each deployment step."
+
+- ❌ "When data revealed the DNS validation crisis..."
+- ✅ "When data revealed the DNS validation issue..."
+
+- ❌ "This was a critical deployment barrier"
+- ✅ "This was a deployment barrier" OR "This was a significant deployment barrier"
+
+- ❌ "The most critical customer feedback point"
+- ✅ "High-priority customer feedback" OR "Important customer feedback"
 
 ### 5. Formulaic Sentence Patterns
 
@@ -143,6 +157,17 @@ with product and engineering stakeholders.
 
 - ❌ "...unified product experience. The unified product experience enabled... By creating a unified product experience..."
 - ✅ Use varied language: "...unified product experience. This integration enabled... By connecting console and documentation..."
+
+**Specific overused phrases to use sparingly:**
+
+- "from scratch" - Use once or twice maximum per case study. Alternatives: "developed new content", "built", "created"
+- "end-to-end" - Often vague and overused
+- "ground up" - Similar to "from scratch"
+
+**Example:**
+
+- ❌ "I created console UI from scratch. I developed help panels from scratch. I built documentation from scratch."
+- ✅ "I created console UI, developed help panels, and built comprehensive documentation for this new console experience."
 
 ### 9. Clichéd Conclusions
 
@@ -214,6 +239,44 @@ Absolutes like "completely," "entirely," "seamlessly," "without any," "zero," "n
 
 - If yes → claim is defensible
 - If no → soften the language
+
+### 14. Confidential Information and Unnecessary Specificity
+
+**Protect confidential business data and avoid extraneous details**
+
+Portfolio content must not disclose confidential business information from quarterly summaries, internal meetings, or private communications.
+
+**Prohibited disclosures:**
+
+- ❌ Specific business metrics ("16% success rate", "84% failure rate", "$2M revenue")
+- ❌ Team member full names (use roles instead: "EVS PM" not "Kiran Sundar")
+- ❌ Internal organizational structure ("AWS Commercial Apps vertical")
+- ❌ Internal code names or project names
+- ❌ Exact dates unless specifically meaningful (use quarters instead)
+- ❌ Meeting scheduling details (times, specific days: "Monday 9:45-10:45am")
+
+**Better alternatives:**
+
+- ✅ "Early customer testing revealed deployment challenges" (instead of exact percentages)
+- ✅ "EVS PMs" or "product leadership" (instead of names)
+- ✅ "Business and product leadership" (instead of org structure)
+- ✅ "Internal project names"
+- ✅ "Q2 2025" instead of "June 9, 2025"
+- ✅ "Weekly workshops" instead of "Monday 9:45-10:45am meetings"
+
+**When exact dates ARE appropriate:**
+
+- Product launch quarters when publicly announced
+- General timeframes (2024-2025, Q2 2023)
+- Year ranges showing project duration
+
+**When names ARE appropriate:**
+
+- Published authors on public documentation
+- Public conference speakers
+- Publicly announced leadership
+
+**General principle:** If information appears in quarterly summaries, internal meetings, or private communications, abstract it for external portfolio use.
 
 ## What DOES Sound Human
 

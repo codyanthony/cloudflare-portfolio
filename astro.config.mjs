@@ -108,8 +108,16 @@ export default defineConfig({
               link: "/console-ux/console-api-design/",
             },
             {
+              label: "ROSA Prerequisites Automation",
+              link: "/console-ux/rosa-prerequisites-automation/",
+            },
+            {
               label: "ROSA HCP Console Integration",
               link: "/console-ux/rosa-hcp-console-integration/",
+            },
+            {
+              label: "EVS Day 1 Deployment Experience",
+              link: "/console-ux/evs-day1-deployment/",
             },
           ],
         },
