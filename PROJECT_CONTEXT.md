@@ -183,26 +183,138 @@ Building a **Senior Technical Writer portfolio site** using Astro Starlight for 
 
 ---
 
+## ⚠️ IN PROGRESS: Architecture & Deployment Guides
+
+**Status:** RESTART REQUIRED - Previous attempts deleted due to fundamental misunderstandings
+
+### What Was Attempted (Dec 28, 2025)
+
+Attempted to create two architecture guide pages:
+
+1. **ROSA Cluster Architecture & Deployment Patterns** (`rosa-architecture-deployment.md`)
+2. **EVS HCX Migration Architecture & Connectivity Patterns** (`evs-hcx-migration.md`)
+
+**Why It Failed:**
+
+1. ❌ **Hallucinated content not in source documentation:**
+   - Added VMware features never documented (e.g., "replication-assisted vMotion")
+   - Made up technical details (/27 recommended sizing when /28 is actual requirement)
+   - Added port numbers and configuration details not in published docs
+   - Created opinionated decision frameworks not present in neutral AWS docs
+
+2. ❌ **Wrong content type:**
+   - Created comprehensive architecture REFERENCE material
+   - Should have curated deployment PROCEDURES from published docs
+   - Focused on explaining architecture instead of showing deployment steps
+
+3. ❌ **Wrong category scope:**
+   - Included console UX work and product design story
+   - That content belongs in Console UX category
+   - Architecture guides should focus on DOCUMENTATION DELIVERABLES only
+
+### Critical Requirements for Next Attempt
+
+**ROSA Architecture & Deployment Page:**
+
+✅ **Source:** Curate ONLY from "Getting Started with ROSA HCP"
+
+- URL: https://docs.aws.amazon.com/rosa/latest/userguide/getting-started-hcp.html
+- This is the strategically meaningful flow (ROSA classic is deprecated 2025)
+
+✅ **Content Type:** Deployment procedures (step-by-step), NOT architecture reference
+
+✅ **Exact Wording:** Must use EXACT wording from published docs - no additions, no paraphrasing
+
+✅ **Look and Feel:** Mirror structure and tone of live AWS documentation
+
+✅ **Focus:** Documentation deliverables (Getting Started guide, procedures, constraint documentation)
+
+✅ **Architecture:** Brief intro ONLY if it helps orient readers to deployment steps
+
+**EVS HCX Migration Page:**
+
+✅ **Source:** Curate from published EVS HCX documentation
+
+- Getting Started: https://docs.aws.amazon.com/evs/latest/userguide/getting-started.html
+- HCX Migration: https://docs.aws.amazon.com/evs/latest/userguide/migrate-evs-hcx.html
+- HCX Public Connectivity: https://docs.aws.amazon.com/evs/latest/userguide/evs-env-hcx-internet-access.html
+
+✅ **Content Type:** Deployment procedures for HCX connectivity options
+
+✅ **Exact Wording:** Must use EXACT wording from published docs
+
+✅ **Focus:** Documentation deliverables showing year-long cross-service research (VPC, IPAM, Service Quotas, EIPs, Transit Gateway, Direct Connect, Site-to-Site VPN, VMware HCX)
+
+### Quarterly Context (For Opening Paragraphs)
+
+**ROSA HCP (Q2 2023):**
+
+- Launch: May 24, 2023
+- Worked with AWS/Red Hat leadership to standardize "ROSA with hosted control planes" terminology
+- Customer friction: VPC configuration mismatches discovered late in deployment workflow
+- Documentation strategy: Surface architecture requirements upfront to reduce deployment failures
+
+**EVS HCX (Q2-Q3 2025):**
+
+- Launch: September 18, 2025
+- Year-long development spanning 8+ AWS services
+- In-depth research across VPC, IPAM, Service Quotas, EIPs, VLANs, Transit Gateway, Direct Connect, Site-to-Site VPN, VMware HCX
+- Delivered Getting Started rewrite, Migration guide, HCX public connectivity page, API Reference updates
+
+### Page Structure (Follow EVS Getting Started Pattern)
+
+1. **Opening context paragraph** (150-200 words)
+   - What documentation deliverable is (Getting Started guide, Migration guide, etc.)
+   - Dual-audience challenge or cross-service complexity
+   - Your documentation strategy (upfront constraints, connectivity patterns, etc.)
+   - Brief mention of quarterly context
+
+2. **Deliverables & Impact section**
+   - Documentation produced: List actual pages/guides
+   - Tools used: AWS CLI, consoles, etc.
+   - Formats: AsciiDoc, etc.
+   - Customer success impact: One sentence
+
+3. **Documentation Samples section**
+   - Links to live published docs
+   - PDF download if applicable
+
+4. **Author's Note** (in callout box)
+   - Explains what was curated from full documentation set
+   - Why these sections selected
+   - What they demonstrate about your documentation work
+
+5. **Curated Procedures** (main body)
+   - Section headers matching source documentation
+   - Actual console wizard steps with form fields
+   - Important/Caution boxes quoted from source
+   - Constraint documentation as published
+
+### What NOT to Include
+
+❌ Console UX design work (that's in Console UX category)
+❌ API design influence (that's in Console UX category)  
+❌ Product development timeline/story (told elsewhere)
+❌ Comprehensive architecture explanations
+❌ Opinionated decision frameworks ("Choose X when...")
+❌ Content not in published external documentation
+❌ Technical details you didn't actually document
+
+### Files Needed
+
+- Create: `/home/cody-anthony/portfolio-startlight/src/content/docs/architecture-guides/rosa-architecture-deployment.md`
+- Create: `/home/cody-anthony/portfolio-startlight/src/content/docs/architecture-guides/evs-hcx-migration.md`
+- Sidebar already updated in `astro.config.mjs` (no changes needed)
+
+---
+
 ## Remaining Work
-
-### Additional Case Studies (Optional)
-
-1. **ROSA JTBD Redesign** (Systems & Strategy)
-   - File: `src/content/docs/systems-strategy/rosa-jtbd-redesign.md` (exists, needs review/revision)
-   - Topic: Jobs-to-be-done restructuring of ROSA documentation
-   - Focus: IA overhaul from feature-centric to workflow-based
-
-2. **EVS API Documentation** (API Documentation category)
-   - File: `src/content/docs/api-documentation/evs-createenvironment.md` (exists, needs review/revision)
-   - Topic: CreateEnvironment API reference
-   - Focus: Complex parameter documentation for VMware VCF deployment
 
 ### Additional Polish Needed
 
 - Final portfolio-wide review for consistency
 - Ensure all case studies follow same narrative structure
 - Verify all screenshots are properly captioned
-- Test visitor counter functionality
 - Final Cloudflare Pages deployment
 
 ---

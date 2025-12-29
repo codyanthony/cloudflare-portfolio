@@ -1,9 +1,9 @@
 ---
-title: EVS Network Architecture & Getting Started
+title: EVS Network Architecture & Deployment Patterns
 description: Technical architecture and deployment guide for hybrid cloud infrastructure
 ---
 
-This architecture and deployment guide for Amazon Elastic VMware Service (EVS) documents complex networking requirements for deploying VMware Cloud Foundation (VCF) software environments on AWS infrastructure. The guide addresses a dual-audience challenge: AWS cloud architects need VMware context, while VMware administrators need AWS networking guidance. I worked with Product leadership to transparently document architectural constraints upfront. This strategy builds enterprise trust by empowering customers to validate service fit before provisioning, avoiding the friction of failed deployments and wasted resources.
+This guide for Amazon Elastic VMware Service documents complex networking requirements for deploying VMware Cloud Foundation (VCF) on AWS infrastructure, addressing a dual-audience challenge: AWS architects need VMware context, while VMware administrators need AWS networking guidance. I worked with Product leadership to transparently document architectural constraints upfront, building enterprise trust by empowering customers to validate service fit before provisioning and avoid deployment failures.
 
 ## Deliverables & Impact
 
@@ -13,25 +13,6 @@ This architecture and deployment guide for Amazon Elastic VMware Service (EVS) d
 - Security boundary documentation (network ACLs vs. security groups)
 - Step-by-step deployment procedures with constraint documentation
 - Prerequisites and architectural limitations with business impact considerations
-
-**Tools used:**
-
-- Visual Studio Code
-- AsciiDoctor
-- Draw.io
-- Git
-- Cline
-- Claude
-- AWS console & CLI for end-to-end validation of workflows
-- Python scripts for executing complex resource creation
-- CloudFormation for automating test deployments in developer environments
-- jq for JSON syntax validation
-
-**Formats used:**
-
-- AWS documentation platform (AsciiDoc)
-- JSON
-- bash
 
 **Customer success impact:** Proactively mitigated deployment failures and configuration mismatches by transparently documenting service constraints upfront.
 
@@ -47,21 +28,8 @@ This architecture and deployment guide for Amazon Elastic VMware Service (EVS) d
 ---
 
 :::note[Author's Note for Portfolio Review]
-The full Amazon EVS deployment workflow includes administrative configuration for DNS, NTP, and licensing. This sample has been curated to focus exclusively on the Network Architecture and Security Boundary configurations. I selected this excerpt to demonstrate my role in defining cross-service architectural constraints (such as BGP routing dependencies) and documenting platform security limitations—specifically regarding boot volume encryption—to address customer compliance questions proactively.
+This sample focuses on network architecture and security boundary configurations. I selected this excerpt to demonstrate my role in defining cross-service architectural constraints (such as BGP routing dependencies) and documenting platform security limitations—specifically regarding boot volume encryption. While this constraint is currently documented in the security reference chapter, I've included it in this prerequisite callout to illustrate my strategic recommendation: architectural limitations affecting compliance should be surfaced upfront in getting started guides. This represents my approach to building enterprise trust through transparent constraint documentation.
 :::
-
----
-
-## EVS Architecture Overview
-
-![EVS Consolidated Domain Architecture](/evs-consolidated-domain-architecture.png)
-
-Amazon EVS deploys a consolidated domain architecture that combines AWS networking infrastructure with VMware Cloud Foundation components. The diagram above illustrates the complete architecture, showing the NSX overlay network (T-0 and T-1 gateways) connecting to logical network segments where customer workloads run, alongside VCF management appliances (NSX Manager, vCenter Server, SDDC Manager, VMware Cloud Builder). The lower section shows the Amazon EVS networks layer, including VTEP networks, management networks, vMotion network, NSX Edge uplink networks, and vSAN network—all running across distributed ESXi hosts provisioned as Amazon EC2 instances.
-
-**Related Architecture Documentation:**
-
-- [Amazon EVS Architecture Overview](https://docs.aws.amazon.com/evs/latest/userguide/architecture.html) - Complete architectural details
-- [Migrate workloads using HCX](https://docs.aws.amazon.com/evs/latest/userguide/migrate-evs-hcx.html) - HCX connectivity architectures
 
 ---
 

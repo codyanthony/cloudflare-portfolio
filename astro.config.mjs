@@ -95,8 +95,16 @@ export default defineConfig({
           label: "Architecture & Deployment Guides",
           items: [
             {
-              label: "EVS Network Architecture & Getting Started",
+              label: "EVS HCX Migration Architecture & Connectivity Patterns",
+              link: "/architecture-guides/evs-hcx-migration/",
+            },
+            {
+              label: "EVS Network Architecture & Deployment Patterns",
               link: "/architecture-guides/evs-getting-started/",
+            },
+            {
+              label: "ROSA Cluster Architecture & Deployment Patterns",
+              link: "/architecture-guides/rosa-hcp-deployment/",
             },
           ],
         },
@@ -108,16 +116,16 @@ export default defineConfig({
               link: "/console-ux/console-api-design/",
             },
             {
-              label: "HCX API Design Collaboration",
-              link: "/console-ux/evs-hcx-api-design/",
+              label: "Cross-Service Service Quotas Strategy",
+              link: "/console-ux/cross-service-service-quotas/",
             },
             {
               label: "ROSA Day 1 Experience",
               link: "/console-ux/rosa-prerequisites-automation/",
             },
             {
-              label: "Cross-Service Service Quotas Strategy",
-              link: "/console-ux/cross-service-service-quotas/",
+              label: "HCX API Design Collaboration",
+              link: "/console-ux/evs-hcx-api-design/",
             },
             {
               label: "ROSA HCP Console Integration",
