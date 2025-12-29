@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+#Project-specific ignores
+PROJECT_CONTEXT.md 
+PORTFOLIO_STYLE_GUIDE.md
+PORTFOLIO_DESIGN_PRINCIPLES.md
+ux_design_portfolio_tips_19.pdf
