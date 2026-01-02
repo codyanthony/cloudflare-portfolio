@@ -18,12 +18,12 @@ This guide for Amazon Elastic VMware Service documents complex networking requir
 
 ## Documentation Samples
 
-**PDF Snapshot:** [Download EVS Architecture Guide Sample](/Cody_Anthony_Sample_1_Technical_Procedure_EVS_Architecture.pdf)
+**PDF Snapshot:** [Download EVS Deployment Guide Sample](/Cody_Anthony_Sample_1_Technical_Procedure_EVS_Architecture.pdf)
 
 **Live Documentation:**
 
-- [Amazon EVS Architecture](https://docs.aws.amazon.com/evs/latest/userguide/architecture.html)
 - [Getting started with Amazon Elastic VMware Service](https://docs.aws.amazon.com/evs/latest/userguide/getting-started.html)
+- [Data protection in Amazon EVS](https://docs.aws.amazon.com/evs/latest/userguide/data-protection.html)
 
 ---
 
