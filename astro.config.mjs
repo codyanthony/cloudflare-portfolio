@@ -99,7 +99,7 @@ export default defineConfig({
               link: "/architecture-guides/evs-hcx-migration/",
             },
             {
-              label: "EVS Environment Deployment Guide",
+              label: "Amazon EVS Deployment Guide",
               link: "/architecture-guides/evs-getting-started/",
             },
             {
