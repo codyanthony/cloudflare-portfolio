@@ -1,9 +1,9 @@
 ---
-title: ROSA with HCP Cluster Deployment Guide
+title: ROSA with HCP Getting Started Guide
 description: CLI-based cluster deployment guide demonstrating Infrastructure-as-Code and AWS STS integration
 ---
 
-This Getting Started guide for Red Hat OpenShift Service on AWS (ROSA) with hosted control planes demonstrates CLI-based cluster deployment using AWS infrastructure. The guide addresses a dual-audience challenge: AWS cloud architects need Kubernetes/OpenShift context, while Red Hat customers need AWS-specific infrastructure guidance (VPC architecture, IAM roles, AWS STS integration). I worked with AWS and Red Hat product leadership in Q2 2023 to standardize ROSA with hosted control planes product naming conventions and document VPC configuration requirements upfront, addressing customer friction where architecture mismatches were discovered late in deployment workflows. The documentation strategy prioritizes Infrastructure-as-Code approaches (Terraform + ROSA CLI automation) over manual workflows, reflecting how most customers deploy ROSA with HCP clusters that provision in 10 minutes rather than the 40+ minutes required for legacy ROSA classic deployments.
+This Getting Started guide for Red Hat OpenShift Service on AWS (ROSA) with hosted control planes demonstrates CLI-based cluster deployment. The guide addresses a dual-audience challenge: AWS cloud architects need Kubernetes/OpenShift context, while Red Hat customers need AWS-specific infrastructure guidance (VPC architecture, IAM roles, AWS STS integration). I worked with AWS and Red Hat product leadership in Q2 2023 to standardize ROSA with hosted control planes product naming conventions and document VPC configuration requirements upfront, addressing customer friction where architecture mismatches were discovered late in deployment workflows. The documentation strategy prioritizes Infrastructure-as-Code approaches (Terraform + ROSA CLI automation) over manual workflows, reflecting how most customers deploy ROSA with HCP clusters that provision in 10 minutes rather than the 40+ minutes required for legacy ROSA classic deployments.
 
 ## Deliverables & Impact
 
@@ -41,6 +41,8 @@ The complete ROSA with HCP Getting Started guide includes alternative approaches
   :::
 
 ---
+
+## Create a ROSA with HCP cluster using the ROSA CLI
 
 ## Prerequisites
 

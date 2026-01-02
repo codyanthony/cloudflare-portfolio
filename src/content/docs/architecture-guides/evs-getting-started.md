@@ -1,6 +1,6 @@
 ---
-title: Amazon EVS Deployment Guide
-description: Technical architecture and deployment guide for hybrid cloud infrastructure
+title: Amazon EVS Getting Started Guide
+description: Getting started guide for Amazon Elastic VMware Service
 ---
 
 This guide for Amazon Elastic VMware Service documents complex networking requirements for deploying VMware Cloud Foundation (VCF) on AWS infrastructure, addressing a dual-audience challenge: AWS architects need VMware context, while VMware administrators need AWS networking guidance. I worked with Product leadership to transparently document architectural constraints upfront, building enterprise trust by empowering customers to validate service fit before provisioning and avoid deployment failures.

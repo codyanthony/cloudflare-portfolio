@@ -99,12 +99,12 @@ export default defineConfig({
               link: "/architecture-guides/evs-hcx-migration/",
             },
             {
-              label: "Amazon EVS Deployment Guide",
+              label: "Amazon EVS Getting Started Guide",
               link: "/architecture-guides/evs-getting-started/",
             },
             {
-              label: "ROSA with HCP Cluster Deployment Guide",
-              link: "/architecture-guides/rosa-hcp-deployment/",
+              label: "ROSA Getting Started Guide",
+              link: "/architecture-guides/rosa-getting-started/",
             },
           ],
         },
