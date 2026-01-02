@@ -99,11 +99,11 @@ export default defineConfig({
               link: "/architecture-guides/evs-hcx-migration/",
             },
             {
-              label: "EVS Network Architecture & Deployment Patterns",
+              label: "EVS Environment Deployment Guide",
               link: "/architecture-guides/evs-getting-started/",
             },
             {
-              label: "ROSA Cluster Architecture & Deployment Patterns",
+              label: "ROSA with HCP Cluster Deployment Guide",
               link: "/architecture-guides/rosa-hcp-deployment/",
             },
           ],

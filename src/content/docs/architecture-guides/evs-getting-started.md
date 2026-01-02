@@ -1,5 +1,5 @@
 ---
-title: EVS Network Architecture & Deployment Patterns
+title: Amazon EVS Deployment Guide
 description: Technical architecture and deployment guide for hybrid cloud infrastructure
 ---
 
@@ -22,8 +22,8 @@ This guide for Amazon Elastic VMware Service documents complex networking requir
 
 **Live Documentation:**
 
+- [Amazon EVS Architecture](https://docs.aws.amazon.com/evs/latest/userguide/architecture.html)
 - [Getting started with Amazon Elastic VMware Service](https://docs.aws.amazon.com/evs/latest/userguide/getting-started.html)
-- [Amazon EVS Architecture Overview](https://docs.aws.amazon.com/evs/latest/userguide/architecture.html)
 
 ---
 

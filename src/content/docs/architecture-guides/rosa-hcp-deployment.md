@@ -1,5 +1,5 @@
 ---
-title: ROSA HCP Cluster Deployment
+title: ROSA with HCP Cluster Deployment Guide
 description: CLI-based cluster deployment guide demonstrating Infrastructure-as-Code and AWS STS integration
 ---
 
