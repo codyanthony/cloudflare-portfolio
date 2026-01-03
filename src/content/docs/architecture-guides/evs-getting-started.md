@@ -43,7 +43,7 @@ For more information about EVS console and API work, see [EVS Day 1 Deployment E
 
 :::note[Author's Note for Portfolio Review]
 This sample focuses on network architecture and security boundary configurations.
-I selected it to show how I defined cross-service constraints (for example, BGP dependencies on VPC Route Server) and documented security limitations—specifically regarding security groups and boot volume encryption support. In the published customer documentation, the boot volume encryption limitation is documented on the **Data protection** page. In this portfolio excerpt, I’ve also included it as a **Getting Started prerequisite** to illustrate my core recommendation: constraints that affect compliance or service fit should appear before customers provision resources.
+I selected it to show how I defined cross-service constraints (for example, BGP dependencies on VPC Route Server) and documented security limitations—specifically regarding security groups and boot volume encryption support. In the published customer documentation, the boot volume encryption limitation is documented on the data protection page. In this portfolio excerpt, I’ve also included it as a getting started prerequisite to illustrate my core recommendation: constraints that affect compliance or service fit should appear before customers provision resources.
 :::
 
 ---
@@ -66,7 +66,7 @@ To get started as simply and quickly as possible, this topic specifies the minim
 
 ## Prerequisites
 
-Before getting started, you must complete the Amazon EVS prerequisite tasks. For more information, see [Setting up Amazon Elastic VMware Service](https://docs.aws.amazon.com/evs/latest/userguide/setting-up.html).
+Before getting started, you must complete the Amazon EVS prerequisite tasks. For more information, see [Setting up Amazon EVS](https://docs.aws.amazon.com/evs/latest/userguide/setting-up.html).
 
 ## Network infrastructure: dynamic routing
 
