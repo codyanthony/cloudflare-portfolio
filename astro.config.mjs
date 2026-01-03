@@ -128,11 +128,11 @@ export default defineConfig({
               link: "/console-ux/evs-hcx-api-design/",
             },
             {
-              label: "ROSA HCP Console Integration",
+              label: "ROSA HCP Console Launch",
               link: "/console-ux/rosa-hcp-console-integration/",
             },
             {
-              label: "EVS Day 1 Deployment Experience",
+              label: "EVS Day 1 Experience",
               link: "/console-ux/evs-day1-deployment/",
             },
           ],

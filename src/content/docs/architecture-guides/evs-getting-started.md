@@ -3,7 +3,11 @@ title: Amazon EVS Getting Started Guide
 description: Getting started guide for Amazon Elastic VMware Service
 ---
 
-This guide for Amazon Elastic VMware Service documents complex networking requirements for deploying VMware Cloud Foundation (VCF) on AWS infrastructure, addressing a dual-audience challenge: AWS architects need VMware context, while VMware administrators need AWS networking guidance. I worked with Product leadership to transparently document architectural constraints upfront, building enterprise trust by empowering customers to validate service fit before provisioning and avoid deployment failures.
+This guide for Amazon Elastic VMware Service documents complex networking requirements for deploying VMware Cloud Foundation (VCF) on AWS infrastructure, addressing a dual-audience challenge: AWS architects need VMware context, while VMware administrators need AWS networking guidance. In this guide, I transparently document architectural constraints upfront, building enterprise trust by empowering customers to validate service fit before provisioning and avoid deployment failures.
+
+The scope of this work spanned private preview (Q4 2024), public preview (Q2 2025), and general availability launches (Q3 2025). For each launch, I collaborated with EVS and EC2 product, UX, engineering, and solution architects teams to address complex networking requirements, mitigate friction in the user experience, and coordinate cross-service documentation updates.
+
+For more information about EVS console and API work, see [EVS Day 1 Deployment Experience (Console + User Guide)](/console-ux/evs-day1-deployment/) and [EVS CreateEnvironment API Reference](/api-documentation/evs-createenvironment/).
 
 ## Deliverables & Impact
 
