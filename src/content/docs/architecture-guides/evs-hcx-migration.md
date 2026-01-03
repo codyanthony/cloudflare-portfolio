@@ -15,7 +15,7 @@ This migration guide for Amazon Elastic VMware Service demonstrates VMware HCX d
 - Connectivity decision framework (comparison table)
 - Network ACL and route table configuration guidance
 
-**Customer success impact:** Enabled flexible migration paths (private or public connectivity) based on customer infrastructure and cost requirements
+**Impact:** Enabled flexible migration paths (private or public connectivity) based on customer infrastructure and cost requirements
 
 ## Documentation Samples
 
@@ -38,6 +38,8 @@ I selected the AWS CLI path for EIP management to demonstrate API-first workflow
 :::
 
 ---
+
+## Documentation excerpt (curated)
 
 ## HCX connectivity options
 

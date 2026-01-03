@@ -15,13 +15,7 @@ This Getting Started guide for Red Hat OpenShift Service on AWS (ROSA) with host
 - Identity provider setup procedures
 - Application deployment verification
 
-**Formats used:**
-
-- AWS documentation platform (AsciiDoc)
-- Bash/shell commands
-- JSON syntax
-
-**Customer success impact:** Enabled 10-minute cluster creation with upfront VPC requirement documentation to reduce configuration failures
+**Impact:** Enabled 10-minute cluster creation with upfront VPC requirement documentation to reduce configuration failures
 
 ## Documentation Samples
 
@@ -41,6 +35,8 @@ The complete ROSA with HCP Getting Started guide includes alternative approaches
   :::
 
 ---
+
+## Documentation excerpt (curated)
 
 ## Create a ROSA with HCP cluster using the ROSA CLI
 
