@@ -3,28 +3,38 @@ title: Amazon EVS Getting Started Guide
 description: Getting started guide for Amazon Elastic VMware Service
 ---
 
-This guide for Amazon Elastic VMware Service documents complex networking requirements for deploying VMware Cloud Foundation (VCF) on AWS infrastructure, addressing a dual-audience challenge: AWS architects need VMware context, while VMware administrators need AWS networking guidance. In this guide, I transparently document architectural constraints upfront, building enterprise trust by empowering customers to validate service fit before provisioning and avoid deployment failures.
+This guide for Amazon Elastic VMware Service documents the networking requirements for deploying VMware Cloud Foundation (VCF) on AWS infrastructure. It’s written for VMware administrators coming from on-premises environments who are new to AWS networking constructs.
 
-The scope of this work spanned private preview (Q4 2024), public preview (Q2 2025), and general availability launches (Q3 2025). For each launch, I collaborated with EVS and EC2 product, UX, engineering, and solution architects teams to address complex networking requirements, mitigate friction in the user experience, and coordinate cross-service documentation updates.
+I owned the guide end-to-end: defined cross-service requirements, designed the information architecture, authored the content, and coordinated SME validation and cross-service documentation updates.
+
+I translated VMware-based networking requirements into AWS terms while defining the new Layer 2 networking constructs introduced by EVS. To reduce failed deployments and configuration mismatches, I surfaced architectural constraints early so customers can validate service fit and compliance requirements before provisioning.
+
+The scope of this work spanned Private Preview (Q4 2024), Public Preview (Q2 2025), and General Availability (Q3 2025). For each launch, I partnered with EVS and EC2 product, UX, engineering, and solutions architects to close documentation gaps, reduce Day 1 friction, and coordinate cross-service updates.
 
 For more information about EVS console and API work, see [EVS Day 1 Deployment Experience (Console + User Guide)](/console-ux/evs-day1-deployment/) and [EVS CreateEnvironment API Reference](/api-documentation/evs-createenvironment/).
 
 ## Deliverables & Impact
 
+**Role:** Owned end-to-end (requirements discovery, information architecture, authoring, SME validation, cross-service coordination)
+**Audience:** On-prem VMware administrators deploying VCF on AWS via EVS
+
 **Documentation produced:**
 
-- Network architecture guidance (BGP routing, VPC Route Server configuration)
-- Security boundary documentation (network ACLs vs. security groups)
-- Step-by-step deployment procedures with constraint documentation
-- Prerequisites and architectural limitations with business impact considerations
+- Network architecture guidance (BGP routing model, VPC Route Server endpoints/peers/propagation requirements)
+- Security boundary model (where NACLs apply and why security groups do not on EVS VLAN subnets)
+- Step-by-step deployment procedure (environment creation with embedded constraint checks)
+- Prerequisites and architectural limitations (go/no-go constraints with business/compliance implications)
 
-**Customer success impact:** Proactively mitigated deployment failures and configuration mismatches by transparently documenting service constraints upfront.
+**Impact:**
+
+- Reduced failed deployments by surfacing hard requirements before provisioning (e.g., Route Server endpoint/peer/ASN rules)
+- Prevented security boundary misconfigurations by clarifying NACL vs. security group enforcement on EVS VLAN subnets
 
 ## Documentation Samples
 
-**PDF Snapshot:** [Download EVS Deployment Guide Sample](/Cody_Anthony_Sample_1_Technical_Procedure_EVS_Architecture.pdf)
+**PDF excerpt:** [Download EVS Deployment Guide Sample](/Cody_Anthony_Sample_1_Technical_Procedure_EVS_Architecture.pdf)
 
-**Live Documentation:**
+**Live AWS docs:**
 
 - [Getting started with Amazon Elastic VMware Service](https://docs.aws.amazon.com/evs/latest/userguide/getting-started.html)
 - [Data protection in Amazon EVS](https://docs.aws.amazon.com/evs/latest/userguide/data-protection.html)
@@ -32,10 +42,13 @@ For more information about EVS console and API work, see [EVS Day 1 Deployment E
 ---
 
 :::note[Author's Note for Portfolio Review]
-This sample focuses on network architecture and security boundary configurations. I selected this excerpt to demonstrate my role in defining cross-service architectural constraints (such as BGP routing dependencies) and documenting platform security limitations—specifically regarding boot volume encryption. While this constraint is currently documented in the security reference chapter, I've included it in this prerequisite callout to illustrate my strategic recommendation: architectural limitations affecting compliance should be surfaced upfront in getting started guides. This represents my approach to building enterprise trust through transparent constraint documentation.
+This sample focuses on network architecture and security boundary configurations.
+I selected it to show how I defined cross-service constraints (for example, BGP dependencies on VPC Route Server) and documented security limitations—specifically regarding security groups and boot volume encryption support. In the published customer documentation, the boot volume encryption limitation is documented on the **Data protection** page. In this portfolio excerpt, I’ve also included it as a **Getting Started prerequisite** to illustrate my core recommendation: constraints that affect compliance or service fit should appear before customers provision resources.
 :::
 
 ---
+
+## Documentation excerpt (curated)
 
 ## Getting started with Amazon Elastic VMware Service
 
@@ -50,6 +63,10 @@ To get started as simply and quickly as possible, this topic specifies the minim
 :::
 
 ---
+
+## Prerequisites
+
+Before getting started, you must complete the Amazon EVS prerequisite tasks. For more information, see [Setting up Amazon Elastic VMware Service](https://docs.aws.amazon.com/evs/latest/userguide/setting-up.html).
 
 ## Network infrastructure: dynamic routing
 
