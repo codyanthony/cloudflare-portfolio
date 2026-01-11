@@ -5,13 +5,13 @@ description: Advocating for extensible architecture aligned with AWS API design 
 
 import { Card, CardGrid, Aside } from "@astrojs/starlight/components";
 
-This project demonstrates upstream product influence during EVS HCX feature API design. As a customer experience advocate in API design reviews, I surfaced parallel VPC development work that could reduce implementation overhead, raised concerns about backward compatibility and long-term maintainability, and advocated for alignment with AWS API design standards. These discussions influenced the team's decision to adopt an extensible architecture that supports current needs while enabling future capabilities.
+This project demonstrates upstream product influence during EVS HCX feature API design. As a documentation lead participating in API design reviews, I identified opportunities to align with parallel VPC development work, raised considerations regarding long-term maintainability, and advocated for alignment with AWS API design standards. These discussions influenced the team's decision to adopt an extensible architecture that supports current needs while enabling future capabilities.
 
 <Aside type="tip" title="At a Glance">
 
 - **Challenge:** EVS planning API design for HCX elastic IP association feature
-- **My Role:** Customer Experience Advocate in API Design Reviews
-- **Timeline:** Q1-Q3 2025 (Collaboration → Influence → Launch)
+- **My Role:** Documentation Lead (API Design Strategy)
+- **Timeline:** 2025 Release Cycle (Design Phase → Launch)
 - **Team:** EVS Product, Engineering, and VPC teams
 - **Impact:** Influenced shift from single-purpose to extensible API architecture aligned with AWS standards
 
@@ -25,7 +25,7 @@ During EVS planning, the team designed a new API capability for the HCX public c
 
 The feature required associating elastic IP addresses to HCX appliances. Elastic IPs provide the stable, persistent public addresses necessary for reliable HCX communication over the internet. Dynamic IP addresses that change with instance reboots would break migration connections, making elastic IPs essential for this architecture.
 
-Initial architectural discussions focused on a single-purpose API design scoped specifically to the HCX feature. This reflected delivery timeline priorities and limited awareness of parallel VPC development work that could inform the design. AWS API design standards emphasize extensible architectures from v1 because public APIs must maintain backward compatibility indefinitely—they can never be removed once shipped. Surfacing this context alongside the parallel VPC work created an opportunity to align the HCX API design with these long-term maintainability principles.
+Initial architectural discussions focused on a single-purpose API design scoped specifically to the HCX feature. This reflected delivery timeline priorities. However, identifying synergies with parallel VPC development initiatives presented an opportunity to align the HCX API design with broader platform patterns. AWS API design standards emphasize extensible architectures from v1 because public APIs must maintain backward compatibility indefinitely—they can never be removed once shipped. Surfacing this context created an opportunity to align the HCX API design with these long-term maintainability principles.
 
 As the documentation lead participating in API design reviews, I recognized several concerns:
 
@@ -53,7 +53,7 @@ As the documentation lead participating in API design reviews, I recognized seve
 
 **Building Cross-Functional Collaboration:**
 
-In Q1 2025, I established daily 1:1 syncs with EVS PMs and engineers and integrated documentation into engineering workflows using shared project management tools. These collaboration mechanisms created visibility into upcoming architectural decisions and positioned me to contribute meaningfully during Q2 HCX API design discussions.
+Early in the development cycle, I established regular syncs with EVS PMs and engineers and integrated documentation into engineering workflows using shared project management tools. These collaboration mechanisms created visibility into upcoming architectural decisions and positioned me to contribute meaningfully during HCX API design discussions.
 
 **Cross-Team Coordination:**
 
@@ -108,15 +108,12 @@ The HCX public connectivity feature launched in Q3 2025, enabling VMware migrati
     Extensible API design aligned with AWS API standards for long-term
     maintainability
   </Card>
-
-<Card title="Future-Proof Architecture">
-  Flexible design supports current + future use cases without breaking changes
-</Card>
-
-<Card title="Cross-Service Consistency">
-  Coordinated VPC terminology and patterns across EVS documentation
-</Card>
-
+  <Card title="Future-Proof Architecture">
+    Flexible design supports current + future use cases without breaking changes
+  </Card>
+  <Card title="Cross-Service Consistency">
+    Coordinated VPC terminology and patterns across EVS documentation
+  </Card>
   <Card title="Successful Launch">
     Feature launched Q3 2025 expanding EVS adoption to customers requiring
     public HCX connectivity for workload migrations
