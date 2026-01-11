@@ -8,24 +8,28 @@ I'm a Senior Technical Writer with 8+ years of experience creating documentation
 ## Core Competencies
 
 **API Documentation & Developer Experience**
+
 - REST API reference documentation with comprehensive parameter coverage
 - API reference documentation serving as source material for SDK docs and CLI tools
 - API design participation shaping parameter names and validation rules
 - Developer-focused error messages and troubleshooting guides
 
 **Technical Architecture & System Documentation**
+
 - Network architecture documentation (BGP routing, VPC configuration, hybrid cloud)
 - Deployment and getting started guides for complex infrastructure
 - Security and compliance documentation
 - Architectural constraint and limitation documentation
 
 **Console UX & Microcopy**
+
 - Console help text and field labels
 - Error message design and validation guidance
 - Tooltips and in-app documentation
 - Cross-product terminology alignment
 
 **Documentation Systems & Strategy**
+
 - Jobs-to-be-Done (JTBD) content strategy and information architecture
 - Documentation infrastructure modernization
 - Self-service authoring frameworks and contributor enablement
@@ -34,10 +38,12 @@ I'm a Senior Technical Writer with 8+ years of experience creating documentation
 ## Tools & Technologies
 
 **Formats & Standards**
+
 - AsciiDoc, Markdown, DITA/DocBook XML
 - JSON, YAML syntax documentation
 
 **Platforms & Technologies**
+
 - Kubernetes/OpenShift container orchestration
 - VMware Cloud Foundation (VCF)
 - AWS cloud services and infrastructure
@@ -45,12 +51,14 @@ I'm a Senior Technical Writer with 8+ years of experience creating documentation
 - IaC (Terraform, CloudFormation)
 
 **Developer Tools**
+
 - Git, GitHub version control
 - Python scripting and automation
-- CI/CD pipelines for documentation (AWS internal tooling, AWS CodePipeline, AWS Amplify)
-- AI assistants (Claude via Cline/Q CLI, ChatGPT, Gemini)
+- CI/CD pipelines for documentation (AWS CodePipeline, AWS Amplify, and proprietary build systems)
+- AI assistants (Claude via Cline, Amazon Q Developer, ChatGPT, Gemini)
 
 **Methodologies**
+
 - Jobs-to-be-Done (JTBD) framework
 - Information architecture (IA) design
 - Docs-as-Code workflows

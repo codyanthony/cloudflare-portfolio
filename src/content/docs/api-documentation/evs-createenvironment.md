@@ -22,14 +22,6 @@ This API reference for Amazon Elastic VMware Service demonstrates my approach to
 - AWS CLI for validating API parameter inputs, response outputs and error messages
 - Python scripts for executing complex resource creation
 - CloudFormation for automating test deployments in developer environments
-- jq for JSON syntax validation
-
-**Formats**
-
-- AWS documentation platform (DocBook XML)
-- JSON
-- Python
-- bash
 
 **Developer experience impact:**
 

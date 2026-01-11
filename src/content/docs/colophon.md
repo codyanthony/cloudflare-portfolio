@@ -3,7 +3,7 @@ title: About This Site
 description: How this portfolio was built and why the tech stack matters
 ---
 
-*This page explains the technical decisions behind this portfolio site.*
+_This page explains the technical decisions behind this portfolio site._
 
 ## Tech Stack Overview
 
@@ -20,6 +20,7 @@ Astro's **islands architecture** ships zero JavaScript by default, loading inter
 Modern documentation isn't just static text—it's an interactive product. Developers expect embedded API playgrounds, live code editors, and real-time validation tools. Traditional static site generators can't support this interactivity, while full React frameworks create performance problems as documentation scales to thousands of pages.
 
 Islands architecture provides the best of both worlds:
+
 - **Fast builds**: Static HTML generation
 - **Selective interactivity**: React components hydrate only where needed
 - **SEO-friendly**: Content loads as HTML, not requiring JavaScript
@@ -146,16 +147,19 @@ Astro's islands architecture solves this by allowing selective interactivity wit
 This portfolio practices modern documentation workflows:
 
 **Version Control:**
+
 - Documentation in Git with full history
 - Pull request reviews for content changes
 - Branch-based development workflows
 
 **Automated Deployment:**
+
 - Infrastructure as code (Wrangler config)
 - Continuous deployment on Git push
 - Reproducible builds and environments
 
 **Component Reusability:**
+
 - Shared UI components across pages
 - Consistent design system
 - DRY principle for documentation elements
@@ -208,11 +212,11 @@ This portfolio was built using **Claude + Cline** (AI coding assistant), demonst
 
 - Modern documentation workflow with AI assistance
 - Human-in-the-loop validation of generated code
-- Practical AI integration aligned with my AWS projects
+- Practical AI integration
 
-The same approach I used for AWS's documentation modernization:
+The approach I used:
 
-1. AI generates initial structure
+1. AI coding agent generates initial structure
 2. Human reviews and refines
 3. Testing validates functionality
 4. Version control tracks changes
