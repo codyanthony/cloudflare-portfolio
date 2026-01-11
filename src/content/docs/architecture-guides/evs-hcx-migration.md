@@ -7,7 +7,7 @@ This migration guide for Amazon Elastic VMware Service demonstrates VMware HCX d
 
 ## Deliverables & Impact
 
-**Documentation produced:**
+**Documentation Produced:**
 
 - HCX migration workflow with connectivity architecture options
 - Private connectivity architecture (AWS Direct Connect, Site-to-Site VPN)
@@ -15,7 +15,10 @@ This migration guide for Amazon Elastic VMware Service demonstrates VMware HCX d
 - Connectivity decision framework (comparison table)
 - Network ACL and route table configuration guidance
 
-**Impact:** Enabled flexible migration paths (private or public connectivity) based on customer infrastructure and cost requirements
+**Strategic Impact:**
+
+- **Cost Optimization:** Enabled a lower-cost migration tier by documenting the "Public Internet" path, removing the barrier of expensive Direct Connect circuits for smaller customers.
+- **Architectural Enablement:** Documented critical trade-offs between private and public connectivity, providing the technical decision matrix used to validate customer deployment models.
 
 ## Documentation Samples
 
@@ -34,7 +37,7 @@ The complete HCX migration documentation includes VMware-specific configuration 
 - Elastic IP association workflow for public connectivity
 - Architectural trade-off documentation for customer decision-making
 
-I selected the AWS CLI path for EIP management to demonstrate API-first workflows. Console procedures are available in the full documentation.
+I prioritized the AWS CLI workflow in this sample to demonstrate an API-First / Infrastructure-as-Code approach, which is the preferred method for enterprise automation.
 :::
 
 ---
@@ -49,12 +52,12 @@ Depending on your situation and connectivity options, you may prefer to use publ
 
 The following table compares the differences between HCX private and public connectivity.
 
-| Aspect                 | Private connectivity                                                                                                                                                                                                                                | Public connectivity                                                                                                                                                                                                                                                                                        |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Overview**           | Uses only private connections within the VPC. You can optionally use AWS Direct Connect or Site-to-Site VPN with a transit gateway for external network connectivity.                                                                               | Uses public internet connectivity with Elastic IP addresses, enabling migrations without a dedicated private connection.                                                                                                                                                                                   |
-| **Best suited for**    | • Time-sensitive vMotion operations<br>• Large-scale migrations<br>• Applications sensitive to latency/jitter<br>• High-volume data transfers<br>• Organizations with existing AWS Direct Connect/AWS Site-to-Site VPN                              | • Locations without AWS Direct Connect/AWS Site-to-Site VPN<br>• Cost-sensitive projects                                                                                                                                                                                                                   |
-| **Key benefits**       | • Consistent low-latency connectivity<br>• Dedicated bandwidth allocation<br>• More reliable network performance<br>• Default HCX encryption can be disabled for private environments to optimize performance<br>• No public IP management required | • Faster setup than private connectivity<br>• Cost-effective for smaller migrations                                                                                                                                                                                                                        |
-| **Key considerations** | • More complex initial setup<br>• Higher upfront infrastructure costs<br>• Longer implementation timeline<br>• No direct internet connectivity for any HCX component                                                                                | • More variable network performance<br>• Bandwidth limitations are possible<br>• Higher latency than private connectivity<br>• Each component requires a dedicated Elastic IP address allocated from the public IPAM pool<br>• EIP associations enable direct internet connectivity for each HCX component |
+| Aspect                 | Private connectivity                                                                                                                                                                                                                                    | Public connectivity                                                                                                                                                                                                                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Overview**           | Uses only private connections within the VPC. You can optionally use AWS Direct Connect or Site-to-Site VPN with a transit gateway for external network connectivity.                                                                                   | Uses public internet connectivity with Elastic IP addresses, enabling migrations without a dedicated private connection.                                                                                                                                                                                       |
+| **Best suited for**    | • Time-sensitive vMotion operations<br/>• Large-scale migrations<br/>• Applications sensitive to latency/jitter<br/>• High-volume data transfers<br/>• Organizations with existing AWS Direct Connect/AWS Site-to-Site VPN                              | • Locations without AWS Direct Connect/AWS Site-to-Site VPN<br/>• Cost-sensitive projects                                                                                                                                                                                                                      |
+| **Key benefits**       | • Consistent low-latency connectivity<br/>• Dedicated bandwidth allocation<br/>• More reliable network performance<br/>• Default HCX encryption can be disabled for private environments to optimize performance<br/>• No public IP management required | • Faster setup than private connectivity<br/>• Cost-effective for smaller migrations                                                                                                                                                                                                                           |
+| **Key considerations** | • More complex initial setup<br/>• Higher upfront infrastructure costs<br/>• Longer implementation timeline<br/>• No direct internet connectivity for any HCX component                                                                                 | • More variable network performance<br/>• Bandwidth limitations are possible<br/>• Higher latency than private connectivity<br/>• Each component requires a dedicated Elastic IP address allocated from the public IPAM pool<br/>• EIP associations enable direct internet connectivity for each HCX component |
 
 :::caution[Important]
 HCX internet-based migration is generally not recommended for:
@@ -112,7 +115,7 @@ For steps to configure HCX with internet connectivity for Amazon EVS environment
 - The HCX public VLAN CIDR block must have a /28 netmask length.
 - EIPs can be associated with or disassociated from the HCX public VLAN after deployment using the Amazon EVS console or AWS CLI, but they must be from the same IPAM pool.
 - Each EIP association has its own unique association ID.
-- You can have up to 13 EIPs from a public IPAM pool associated with the /28 HCX public VLAN. You cannot associate the first two EIPs or the last EIP from the public IPAM-allocated CIDR block with the HCX public VLAN subnet. These EIPs are reserved as network, default gateway, and broadcast addresses. Amazon EVS throws a validation error if you attempt to associate these EIPs with the VLAN.
+- You can have up to 13 EIPs from a public IPAM pool associated with the /28 HCX public VLAN. You cannot associate the first two EIPs or the last EIP from the public IPAM-allocated CIDR block with the HCX public VLAN subnet. These EIPs are reserved as network, default gateway, and broadcast addresses and cannot be associated with the VLAN.
 
 ### Security considerations
 
@@ -146,112 +149,3 @@ aws evs associate-eip-to-vlan \
   --vlan-name "hcx" \
   --allocation-id "eipalloc-xxxxxxxxxxxxxxxxx"
 ```
-
-The command returns details about the VLAN, including the new EIP association:
-
-```json
-{
-  "vlan": {
-    "vlanId": 80,
-    "cidr": "198.51.100.0/28",
-    "availabilityZone": "us-east-2c",
-    "functionName": "hcx",
-    "subnetId": "subnet-xxxxxxxxxxxxxxxxx",
-    "createdAt": "2025-08-22T23:42:16.200000+00:00",
-    "modifiedAt": "2025-08-23T13:42:28.155000+00:00",
-    "vlanState": "CREATED",
-    "stateDetails": "VLAN successfully created",
-    "eipAssociations": [
-      {
-        "associationId": "eipassoc-xxxxxxxxxxxxxxxxx",
-        "allocationId": "eipalloc-xxxxxxxxxxxxxxxxx",
-        "ipAddress": "198.51.100.2"
-      }
-    ],
-    "isPublic": true,
-    "networkAclId": "acl-xxxxxxxxxxxxxxxxx"
-  }
-}
-```
-
-The `eipAssociations` array shows the new association, including:
-
-- `associationId` - The unique ID for this EIP association, used for disassociation.
-- `allocationId` - The allocation ID of the associated Elastic IP address.
-- `ipAddress` - The IP address assigned to the VLAN.
-
-Repeat the step to associate additional EIPs. You can have up 13 EIPs associated with the HCX public VLAN.
-
-:::caution[Important]
-HCX public internet connectivity fails if you do not associate at least two EIPs from the IPAM pool with an HCX public VLAN subnet.
-:::
-
-## Disassociate an Elastic IP address from HCX VLAN
-
-### Prerequisites
-
-Ensure that you have the following:
-
-- Amazon EVS environment is already created.
-- EIP is associated with the Amazon EVS environment.
-
-### Disassociate EIP using AWS CLI
-
-To disassociate an Elastic IP address from a VLAN, use the example `disassociate-eip-from-vlan` command.
-
-- `environment-id` - The ID of your Amazon EVS environment.
-- `vlan-name` - Must be `hcx`. Amazon EVS only supports EIP association with the HCX VLAN at this time.
-- `association-id` - The association ID of the EIP association to remove.
-
-:::caution[Important]
-Disassociating EIPs may cause a loss of internet connectivity for appliances that use public VLAN subnets.
-:::
-
-```bash
-aws evs disassociate-eip-from-vlan \
-  --environment-id "env-xxxxxxxxxx" \
-  --vlan-name "hcx" \
-  --association-id "eipassoc-xxxxxxxxxxxxxxxxx"
-```
-
-The command returns details about the VLAN with the EIP association removed:
-
-```json
-{
-  "vlan": {
-    "vlanId": 80,
-    "cidr": "198.51.100.0/28",
-    "availabilityZone": "us-east-2c",
-    "functionName": "hcx",
-    "subnetId": "subnet-xxxxxxxxxxxxxxxxx",
-    "createdAt": "2025-08-22T23:42:16.200000+00:00",
-    "modifiedAt": "2025-08-23T13:48:49.846000+00:00",
-    "vlanState": "CREATED",
-    "stateDetails": "VLAN successfully created",
-    "eipAssociations": [],
-    "isPublic": true,
-    "networkAclId": "acl-xxxxxxxxxxxxxxxxx"
-  }
-}
-```
-
-The empty `eipAssociations` array confirms that the Elastic IP address has been successfully disassociated from the VLAN.
-
-## Verify HCX configuration
-
-Essential verification steps:
-
-1. **Check HCX VLAN network ACL association** - Use VPC console or AWS CLI to verify VLAN associated with network ACL. For more information, see [Create a network ACL to control Amazon EVS VLAN subnet traffic](https://docs.aws.amazon.com/evs/latest/userguide/getting-started.html#getting-started-create-nacl-vlan-traffic).
-
-2. **Check route table explicit association** - Verify all EVS VLAN subnets explicitly associated with route table (not implicit main route table). For HCX public VLAN, you must have an associated public route table with an internet gateway as the target.
-
-3. **Check EIP associations** - Use `aws evs list-environment-vlans` to verify EIPs associated with HCX VLAN.
-
-4. **Create vSphere distributed port group** - Configure port group with HCX VLAN ID in vSphere Client. For more information, see [Add a Distributed Port Group](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-networking-8-0/basic-networking-with-vnetwork-distributed-switches/dvport-groups/add-a-distributed-port-group.html) in the VMware vSphere documentation.
-
-Optional HCX features referenced in full documentation:
-
-- **HCX WAN Optimization** for internet-based migrations to improve performance over high-latency connections.
-- **HCX Mobility Optimized Networking (MON)** for selective routing to optimize traffic flows for migrated workloads.
-
-For complete verification and VMware-specific HCX setup, see [VMware HCX Troubleshooting](https://techdocs.broadcom.com/us/en/vmware-cis/hcx/vmware-hcx/4-10/vmware-hcx-user-guide-4-10/vmware-hcx-troubleshooting.html) in the VMware HCX User Guide.
