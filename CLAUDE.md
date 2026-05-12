@@ -4,10 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-- `npm run dev` — local dev server at `localhost:4321`
-- `npm run build` — production build into `./dist/`
-- `npm run preview` — preview the built site locally
-- `npm run astro check` — Astro/TypeScript diagnostics (no separate lint/test scripts exist)
+This repo uses **pnpm** (pinned via the `packageManager` field). Install pnpm with `corepack` or the standalone installer at https://pnpm.io/installation.
+
+- `pnpm install` — install dependencies
+- `pnpm dev` — local dev server at `localhost:4321`
+- `pnpm build` — production build into `./dist/`
+- `pnpm preview` — preview the built site locally
+- `pnpm astro check` — Astro/TypeScript diagnostics (no separate lint/test scripts exist)
+
+Postinstall scripts are deny-by-default in pnpm 10+. The allowlist of build-script-permitted packages (`sharp`, `esbuild`, `workerd`) lives in `pnpm-workspace.yaml` under `allowBuilds`. If a new native dep is added and `pnpm install` reports `ERR_PNPM_IGNORED_BUILDS`, add it there.
 
 ## Architecture
 
@@ -29,7 +34,7 @@ The sidebar is **not** auto-generated — it is hand-maintained in `astro.config
 ### Footer override + visitor counter (Cloudflare KV)
 Starlight's default Footer is overridden in `astro.config.mjs` (`components.Footer → ./src/components/Footer.astro`). The custom footer mounts a React island (`VisitorCounter.jsx`, `client:load`) that calls `/api/visitor-count`.
 
-That endpoint is a **Cloudflare Pages Function** at `functions/api/visitor-count.js` — not an Astro route. It reads/writes a single `total_visitors` key in a Cloudflare KV namespace bound as `VISITOR_COUNT` (configured in `wrangler.jsonc`, namespace id `0030dcaee1bb40eb94634bb77eb57a20`). POSTs are debounced client-side via `sessionStorage`. Because this is a Pages Function (not Astro SSR), it only works on Cloudflare deployments / `wrangler pages dev` — it will 404 under `npm run dev`.
+That endpoint is a **Cloudflare Pages Function** at `functions/api/visitor-count.js` — not an Astro route. It reads/writes a single `total_visitors` key in a Cloudflare KV namespace bound as `VISITOR_COUNT` (configured in `wrangler.jsonc`, namespace id `0030dcaee1bb40eb94634bb77eb57a20`). POSTs are debounced client-side via `sessionStorage`. Because this is a Pages Function (not Astro SSR), it only works on Cloudflare deployments / `wrangler pages dev` — it will 404 under `pnpm dev`.
 
 ### Assets
 
